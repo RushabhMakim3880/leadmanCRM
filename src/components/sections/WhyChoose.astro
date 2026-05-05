@@ -1,0 +1,149 @@
+---
+const reasons = [
+  {
+    title: "AI & Whatsapp Ready",
+    desc: "Comes with whatsapp integration as well as ready to integrate AI as per needs of your business.",
+    icon: "💬"
+  },
+  {
+    title: "Intelligent Lead Distribution",
+    desc: "With built in rule based engine, Leadman can automatically distribute leads between your sales team.",
+    icon: "🤝"
+  },
+  {
+    title: "Single Window System",
+    desc: "Our smart and intelligently designed single window system help you track every lead timely and efficiently.",
+    icon: "🪟"
+  },
+  {
+    title: "Made for SMEs",
+    desc: "Crafted specifically for small and medium enterprises, addressing their unique challenges with effective solutions.",
+    icon: "🏢"
+  },
+  {
+    title: "Anywhere, Anytime Access",
+    desc: "Access Leadman CRM from anywhere, on any device. Stay connected and manage your business on the go.",
+    icon: "📱"
+  },
+  {
+    title: "Secure and Reliable",
+    desc: "Rest easy with daily automated backups and industry-standard security measures, ensuring data is always safe.",
+    icon: "🔒"
+  },
+  {
+    title: "Effortless Onboarding",
+    desc: "Focus on growing your business while our team handles a seamless onboarding process, making the transition smooth.",
+    icon: "🚀"
+  },
+  {
+    title: "Dedicated Support",
+    desc: "Our dedicated support team is just a call away, ready to assist with anything you need to ensure your success.",
+    icon: "🎧"
+  },
+  {
+    title: "Advanced Analytics",
+    desc: "Gain deep insights into your sales, products, and team performance with our detailed analytics and reporting.",
+    icon: "📊"
+  },
+  {
+    title: "Seamless Integration",
+    desc: "Effortlessly integrate with popular online marketplaces like Indiamart, Tradeindia, and Exportersindia.",
+    icon: "🔗"
+  },
+  {
+    title: "Boost Sales and Revenue",
+    desc: "Drive your sales and revenue growth effortlessly with Leadman CRM's powerful features.",
+    icon: "📈"
+  },
+  {
+    title: "Intuitive User Interface",
+    desc: "Experience a clean, intuitive interface designed for maximum efficiency and ease of use.",
+    icon: "🖥️"
+  },
+  {
+    title: "Track Team Performance",
+    desc: "Monitor and enhance your team's efficiency with detailed performance tracking.",
+    icon: "👥"
+  },
+  {
+    title: "Automated Notifications",
+    desc: "Stay informed with real-time notifications and automated reports to keep your business on track.",
+    icon: "🔔"
+  }
+];
+---
+
+<section class="why-choose-section section-padding">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Why Choose <span class="text-primary">Leadman CRM?</span></h2>
+      <p>The strategic choice for businesses looking to scale operations and automate growth.</p>
+    </div>
+
+    <div class="why-grid">
+      {reasons.map((item) => (
+        <div class="why-item">
+          <div class="why-icon">{item.icon}</div>
+          <div class="why-content">
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-choose-section {
+    background-color: #ffffff;
+  }
+
+  .section-header {
+    margin-bottom: 64px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  .why-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .why-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .why-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: #111827;
+  }
+
+  .why-content p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .why-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>
