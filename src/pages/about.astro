@@ -50,7 +50,9 @@ import Footer from '../components/common/Footer.astro';
 
         <div class="dive-grid">
           <div class="dive-card">
-            <div class="card-icon-mini">💡</div>
+            <div class="card-icon-mini">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
             <h3>The Catalyst for Innovation</h3>
             <p class="card-intro">We didn't just build a tool; we engineered a transition from survival to systematic growth.</p>
             <ul>
@@ -60,7 +62,9 @@ import Footer from '../components/common/Footer.astro';
           </div>
 
           <div class="dive-card">
-            <div class="card-icon-mini">🚀</div>
+            <div class="card-icon-mini">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
             <h3>Democratizing Enterprise Power</h3>
             <p class="card-intro">We believe that advanced sales intelligence shouldn't be a luxury reserved for industry giants.</p>
             <ul>
@@ -76,17 +80,23 @@ import Footer from '../components/common/Footer.astro';
       <div class="container">
         <div class="philosophy-grid">
           <div class="philo-card">
-            <div class="philo-icon">🎯</div>
+            <div class="philo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
             <h3>Mission</h3>
             <p>To empower Indian SMEs with the tools they need to automate sales, increase productivity, and scale without friction.</p>
           </div>
           <div class="philo-card">
-            <div class="philo-icon">💡</div>
+            <div class="philo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            </div>
             <h3>Philosophy</h3>
             <p>We believe technology should serve the process, not dictate it. Our software is designed to be invisible yet indispensable.</p>
           </div>
           <div class="philo-card">
-            <div class="philo-icon">🤝</div>
+            <div class="philo-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
             <h3>Commitment</h3>
             <p>We don't just sell software. We partner with you for onboarding, implementation, and long-term success.</p>
           </div>
@@ -232,9 +242,10 @@ import Footer from '../components/common/Footer.astro';
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
   }
 
-  .philo-icon {
-    font-size: 3rem;
-    margin-bottom: 24px;
+  .philo-icon svg {
+    width: 48px;
+    height: 48px;
+    color: #0066cc;
   }
 
   .philo-card h3 {
@@ -298,9 +309,10 @@ import Footer from '../components/common/Footer.astro';
     border-color: #0066cc;
   }
 
-  .card-icon-mini {
-    font-size: 2.5rem;
-    margin-bottom: 24px;
+  .card-icon-mini svg {
+    width: 32px;
+    height: 32px;
+    color: #0066cc;
   }
 
   .dive-card h3 {
