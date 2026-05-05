@@ -42,25 +42,30 @@ import Footer from '../components/common/Footer.astro';
     <section class="deep-dive-section section-padding">
       <div class="container">
         <div class="intro-story">
+          <h2>Ending the Era of <span>Spreadsheet Chaos</span></h2>
           <p>
-            Leadman CRM’s “story” is that it was created specifically to solve common sales‑management pain points for small and medium‑sized enterprises (SMEs) that were still relying on spreadsheets, manual WhatsApp follow‑ups, and scattered systems.
+            Leadman CRM was born from a singular observation: too many brilliant SMEs were being held back by "fragmented friction." We saw business leaders drowning in endless spreadsheets, manual WhatsApp follow-ups, and scattered data silos that stifled growth. We created Leadman to turn that chaos into a competitive advantage.
           </p>
         </div>
 
         <div class="dive-grid">
           <div class="dive-card">
-            <h3>Where the idea came from</h3>
+            <div class="card-icon-mini">💡</div>
+            <h3>The Catalyst for Innovation</h3>
+            <p class="card-intro">We didn't just build a tool; we engineered a transition from survival to systematic growth.</p>
             <ul>
-              <li>The product is positioned as a simple, affordable, MSME‑focused CRM that helps businesses move from Excel/WhatsApp chaos to a single, organized sales‑automation platform.</li>
-              <li>Marketing and pitch materials emphasize data‑driven decisions, systematic sales tracking, and AI‑assisted follow‑ups so sales teams can be more productive and close more deals.</li>
+              <li><strong>Unified Sales Engine:</strong> We help MSMEs graduate from the fatigue of Excel and WhatsApp manual entry to a high-performance, automated sales ecosystem.</li>
+              <li><strong>Intelligence-Driven Action:</strong> Our architecture prioritizes data-driven insights and AI-assisted follow-ups, ensuring your team spends less time "managing" and more time closing.</li>
             </ul>
           </div>
 
           <div class="dive-card">
-            <h3>How the company positions itself</h3>
+            <div class="card-icon-mini">🚀</div>
+            <h3>Democratizing Enterprise Power</h3>
+            <p class="card-intro">We believe that advanced sales intelligence shouldn't be a luxury reserved for industry giants.</p>
             <ul>
-              <li>Leadman CRM markets itself as “designed for sales, productivity, growth, and automation,” targeting owners and managers who want better visibility into leads, pipelines, and team performance.</li>
-              <li>The brand story is built around enabling SMEs to compete with bigger players by systematizing their sales process without needing expensive enterprise CRM setups.</li>
+              <li><strong>Scale Without Complexity:</strong> Leadman is purpose-built to give you the visibility, control, and automation of a global enterprise with the simplicity and agility of an SME.</li>
+              <li><strong>The Competitive Edge:</strong> We empower you to outmaneuver bigger players by systematizing your sales journey, leveling the playing field without the enterprise price tag.</li>
             </ul>
           </div>
         </div>
@@ -254,11 +259,22 @@ import Footer from '../components/common/Footer.astro';
     text-align: center;
   }
 
+  .intro-story h2 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    color: #111827;
+  }
+
+  .intro-story h2 span {
+    color: #0066cc;
+  }
+
   .intro-story p {
-    font-size: 1.4rem;
-    color: #1e293b;
+    font-size: 1.25rem;
+    color: #64748b;
     line-height: 1.6;
-    font-weight: 500;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .dive-grid {
@@ -268,16 +284,37 @@ import Footer from '../components/common/Footer.astro';
   }
 
   .dive-card {
-    background: #f8fbff;
+    background: #ffffff;
     padding: 48px;
-    border-radius: 24px;
-    border: 1px solid #e5e7eb;
+    border-radius: 32px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+  }
+
+  .dive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border-color: #0066cc;
+  }
+
+  .card-icon-mini {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
   }
 
   .dive-card h3 {
     font-size: 1.75rem;
+    color: #111827;
+    margin-bottom: 16px;
+  }
+
+  .card-intro {
+    font-weight: 600;
     color: #0066cc;
     margin-bottom: 24px;
+    font-size: 1.1rem;
+    line-height: 1.4;
   }
 
   .dive-card ul {
@@ -291,7 +328,7 @@ import Footer from '../components/common/Footer.astro';
     margin-bottom: 20px;
     color: #4b5563;
     line-height: 1.7;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .dive-card li::before {
