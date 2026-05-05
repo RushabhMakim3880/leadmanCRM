@@ -18,58 +18,60 @@ import Footer from '../components/common/Footer.astro';
     <section class="story-section">
       <div class="container grid-2">
         <div class="story-content">
-          <span class="badge">Our Story</span>
+          <span class="badge">Our Heritage</span>
           <h2>A Decade of <span>Digital Excellence</span></h2>
-          <p>
-            Leadman CRM is built with a simple belief: software should do more than just store data. It should help business owners and leaders understand what is happening in their sales process, take better decisions, and act at the right time for growth.
-          </p>
-          <p>
-            Leadman was shaped through real experience of working with more than 20 businesses and building solutions around their actual day-to-day needs. By learning their pain points, understanding practical sales processes, and following proven sales journey methods like <strong>SPANCO</strong>, we developed a CRM that is structured, easy to use, and suitable for growing SME businesses.
-          </p>
-          <p>
-            We also understand that every business does not need a heavy or overly complex system. A practical business needs a solution that fits its size, process, and growth stage. That is why Leadman CRM is designed especially for SMEs — to give the right level of control, visibility, and flexibility without making daily work complicated.
-          </p>
+          <div class="story-body">
+            <p>
+              Leadman CRM is built with a simple belief: software should do more than just store data. It should help business owners and leaders understand what is happening in their sales process, take better decisions, and act at the right time for growth.
+            </p>
+            <p>
+              Leadman was shaped through real experience of working with more than 20 businesses and building solutions around their actual day-to-day needs. By learning their pain points and understanding proven sales journey methods like <strong>SPANCO</strong>, we developed a CRM that is structured, easy to use, and suitable for growing SME businesses.
+            </p>
+          </div>
         </div>
         <div class="story-visual">
-          <div class="experience-card">
-            <span class="exp-num">12+</span>
-            <span class="exp-text">Years of Engineering Excellence</span>
+          <div class="heritage-stat-box">
+            <div class="stat-main">12+</div>
+            <div class="stat-title">Years of Engineering</div>
+            <p>Building high-performance sales ecosystems that empower India's leading SMEs.</p>
+            <div class="stat-accent"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="deep-dive-section section-padding">
+    <section class="deep-dive-section dark-premium">
       <div class="container">
-        <div class="intro-story">
+        <div class="intro-story text-center">
+          <span class="badge-alt">The Evolution</span>
           <h2>Ending the Era of <span>Spreadsheet Chaos</span></h2>
           <p>
-            Leadman CRM was born from a singular observation: too many brilliant SMEs were being held back by "fragmented friction." We saw business leaders drowning in endless spreadsheets, manual WhatsApp follow-ups, and scattered data silos that stifled growth. We created Leadman to turn that chaos into a competitive advantage.
+            Leadman CRM was born from a singular observation: too many brilliant SMEs were being held back by "fragmented friction." We created Leadman to turn that chaos into a competitive advantage.
           </p>
         </div>
 
         <div class="dive-grid">
-          <div class="dive-card">
-            <div class="card-icon-mini">
+          <div class="glass-card">
+            <div class="glass-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
             <h3>The Catalyst for Innovation</h3>
-            <p class="card-intro">We didn't just build a tool; we engineered a transition from survival to systematic growth.</p>
-            <ul>
-              <li><strong>Unified Sales Engine:</strong> We help MSMEs graduate from the fatigue of Excel and WhatsApp manual entry to a high-performance, automated sales ecosystem.</li>
-              <li><strong>Intelligence-Driven Action:</strong> Our architecture prioritizes data-driven insights and AI-assisted follow-ups, ensuring your team spends less time "managing" and more time closing.</li>
+            <p class="glass-intro">We didn't just build a tool; we engineered a transition from survival to systematic growth.</p>
+            <ul class="glass-list">
+              <li><strong>Unified Sales Engine:</strong> Transition from Excel fatigue to a high-performance, automated sales ecosystem.</li>
+              <li><strong>Intelligence-Driven:</strong> Prioritize data-driven insights and AI-assisted follow-ups to close more deals.</li>
             </ul>
           </div>
 
-          <div class="dive-card">
-            <div class="card-icon-mini">
+          <div class="glass-card">
+            <div class="glass-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <h3>Democratizing Enterprise Power</h3>
-            <p class="card-intro">We believe that advanced sales intelligence shouldn't be a luxury reserved for industry giants.</p>
-            <ul>
-              <li><strong>Scale Without Complexity:</strong> Leadman is purpose-built to give you the visibility, control, and automation of a global enterprise with the simplicity and agility of an SME.</li>
-              <li><strong>The Competitive Edge:</strong> We empower you to outmaneuver bigger players by systematizing your sales journey, leveling the playing field without the enterprise price tag.</li>
+            <p class="glass-intro">Advanced sales intelligence shouldn't be a luxury reserved for industry giants.</p>
+            <ul class="glass-list">
+              <li><strong>Scale Without Complexity:</strong> Enterprise visibility and control with the simplicity of an SME tool.</li>
+              <li><strong>The Competitive Edge:</strong> Outmaneuver bigger players by systematizing your sales journey without the high costs.</li>
             </ul>
           </div>
         </div>
@@ -173,42 +175,70 @@ import Footer from '../components/common/Footer.astro';
   }
 
   .story-content h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 24px;
     color: #111827;
+    line-height: 1.2;
   }
 
   .story-content h2 span {
-    color: #0a84ff;
+    color: #0066cc;
   }
 
-  .story-content p {
-    font-size: 1.1rem;
+  .story-body p {
+    font-size: 1.15rem;
     color: #4b5563;
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 24px;
   }
 
-  .experience-card {
-    background: #0a84ff;
-    padding: 60px 40px;
-    border-radius: 32px;
+  .heritage-stat-box {
+    background: #0066cc;
+    padding: 60px 48px;
+    border-radius: 48px;
     color: white;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(10, 132, 255, 0.2);
+    box-shadow: 0 40px 80px rgba(0, 102, 204, 0.2);
+    position: relative;
+    overflow: hidden;
   }
 
-  .exp-num {
-    display: block;
-    font-size: 5rem;
+  .heritage-stat-box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+  }
+
+  .stat-main {
+    font-size: 6rem;
     font-weight: 800;
-    margin-bottom: 8px;
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -3px;
   }
 
-  .exp-text {
+  .stat-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .heritage-stat-box p {
     font-size: 1.1rem;
-    font-weight: 600;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .stat-accent {
+    width: 60px;
+    height: 6px;
+    background: white;
+    margin-top: 32px;
+    border-radius: 3px;
   }
 
   .philosophy-section {
@@ -294,61 +324,123 @@ import Footer from '../components/common/Footer.astro';
     gap: 40px;
   }
 
-  .dive-card {
-    background: #ffffff;
-    padding: 48px;
-    border-radius: 32px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    transition: all 0.3s ease;
+  .dark-premium {
+    background: #0b1120;
+    padding: 100px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
   }
 
-  .dive-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-    border-color: #0066cc;
+  .dark-premium::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
   }
 
-  .card-icon-mini svg {
+  .badge-alt {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 102, 204, 0.2);
+    color: #38bdf8;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+  }
+
+  .dark-premium h2 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  .dark-premium h2 span {
+    color: #38bdf8;
+  }
+
+  .dark-premium .intro-story p {
+    color: #94a3b8;
+    font-size: 1.3rem;
+  }
+
+  .glass-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 60px 48px;
+    border-radius: 40px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .glass-card:hover {
+    transform: scale(1.02);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(56, 189, 248, 0.1);
+  }
+
+  .glass-icon {
+    width: 64px;
+    height: 64px;
+    background: #0066cc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    box-shadow: 0 10px 20px rgba(0, 102, 204, 0.3);
+  }
+
+  .glass-icon svg {
     width: 32px;
     height: 32px;
-    color: #0066cc;
+    color: white;
   }
 
-  .dive-card h3 {
-    font-size: 1.75rem;
-    color: #111827;
-    margin-bottom: 16px;
+  .glass-card h3 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
   }
 
-  .card-intro {
-    font-weight: 600;
-    color: #0066cc;
-    margin-bottom: 24px;
-    font-size: 1.1rem;
-    line-height: 1.4;
+  .glass-intro {
+    font-size: 1.15rem;
+    color: #38bdf8;
+    font-weight: 700;
+    margin-bottom: 32px;
+    line-height: 1.5;
   }
 
-  .dive-card ul {
+  .glass-list {
     list-style: none;
     padding: 0;
   }
 
-  .dive-card li {
+  .glass-list li {
     position: relative;
     padding-left: 28px;
-    margin-bottom: 20px;
-    color: #4b5563;
+    margin-bottom: 24px;
+    color: #94a3b8;
     line-height: 1.7;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
-  .dive-card li::before {
-    content: "→";
+  .glass-list li::before {
+    content: "✓";
     position: absolute;
     left: 0;
-    color: #0066cc;
-    font-weight: 800;
+    color: #38bdf8;
+    font-weight: 900;
+  }
+
+  .glass-list strong {
+    color: white;
   }
 
   @media (max-width: 768px) {
