@@ -105,6 +105,56 @@ const plans = [
       ))}
     </div>
 
+    <div class="topup-container">
+      <div class="topup-grid">
+        <div class="topup-card">
+          <h4>Additional Top-ups</h4>
+          <table class="topup-table">
+            <tr>
+              <td>Storage</td>
+              <td class="text-right"><strong>₹160 / 5GB</strong></td>
+            </tr>
+            <tr>
+              <td>Data Points</td>
+              <td class="text-right"><strong>₹250 / 25K Records</strong></td>
+            </tr>
+            <tr>
+              <td>Whatsapp Messages</td>
+              <td class="text-right">
+                <strong>₹250 / 100K</strong>
+                <span class="sub-label">Total In/Out Messages</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Whatsapp Integration</td>
+              <td class="text-right"><strong>₹1000 / Month</strong></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="topup-card">
+          <h4>Included Limits</h4>
+          <table class="topup-table">
+            <tr>
+              <td>Storage Limit</td>
+              <td class="text-right"><strong>1GB / User</strong></td>
+            </tr>
+            <tr>
+              <td>Data Points</td>
+              <td class="text-right"><strong>25K / User</strong></td>
+            </tr>
+            <tr>
+              <td>Whatsapp Messages</td>
+              <td class="text-right"><strong>25K / User</strong></td>
+            </tr>
+          </table>
+          <div class="note-box">
+            * Integration costs are per account, not per user.
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="pricing-footer text-center">
       <p>* All prices are per month. Billed annually. 18% GST applicable.</p>
     </div>
@@ -245,6 +295,80 @@ const plans = [
     margin-top: 48px;
     color: #6b7280;
     font-size: 0.85rem;
+  }
+
+  .topup-container {
+    margin-top: 80px;
+    background: #f8fbff;
+    padding: 60px;
+    border-radius: 32px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .topup-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .topup-card h4 {
+    font-size: 1.25rem;
+    color: #111827;
+    margin-bottom: 24px;
+    font-weight: 800;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+  }
+
+  .topup-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .topup-table td {
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4b5563;
+    font-size: 1rem;
+  }
+
+  .topup-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-right strong {
+    color: #111827;
+  }
+
+  .sub-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 4px;
+  }
+
+  .note-box {
+    margin-top: 32px;
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+  }
+
+  @media (max-width: 992px) {
+    .topup-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .topup-container {
+      padding: 30px 20px;
+    }
   }
 
   @media (max-width: 768px) {
