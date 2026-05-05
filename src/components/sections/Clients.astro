@@ -1,13 +1,10 @@
 ---
-const clients = [
-  { name: "Mehta Engineering", initials: "ME", color: "#0066cc" },
-  { name: "Shah Plastics", initials: "SP", color: "#10b981" },
-  { name: "Patel Electronics", initials: "PE", color: "#f59e0b" },
-  { name: "Growth SME", initials: "GS", color: "#ef4444" },
-  { name: "Twinstar Biz", initials: "TB", color: "#8b5cf6" },
-  { name: "Mindstien Lab", initials: "ML", color: "#3b82f6" },
-  { name: "Rajkot Ind", initials: "RI", color: "#ec4899" },
-  { name: "Global Sales", initials: "GS", color: "#14b8a6" },
+const clientLogos = [
+  "AIM.png", "Ajantalogo.png", "Emisunlogo.png", "EnvitroLab.png", 
+  "FMC.png", "GenesisSolar.png", "Gmt-1.png", "HPTLOGO.png", 
+  "Jayshakti.png", "Jse.png", "NovaValves-300x90.png", "RaftarLogo.png", 
+  "SKlogo.png", "SVCNC-150x150.png", "Sahara.png", "ShreeMomaiLogo.png", 
+  "ShrutiKitchanware.png", "SweetBite-150x150.png", "vimox-logo-300x74.png"
 ];
 ---
 
@@ -17,21 +14,15 @@ const clients = [
     
     <div class="logo-track">
       <div class="logo-list">
-        {clients.map((client) => (
+        {clientLogos.map((logo) => (
           <div class="logo-item">
-            <div class="logo-circle" style={`background-color: ${client.color}15; color: ${client.color}`}>
-              {client.initials}
-            </div>
-            <span class="client-name">{client.name}</span>
+            <img src={`/images/clients/${logo}`} alt="Client Logo" class="client-img" />
           </div>
         ))}
-        {/* Duplicate for infinite effect */}
-        {clients.map((client) => (
+        {/* Duplicate for infinite loop */}
+        {clientLogos.map((logo) => (
           <div class="logo-item">
-            <div class="logo-circle" style={`background-color: ${client.color}15; color: ${client.color}`}>
-              {client.initials}
-            </div>
-            <span class="client-name">{client.name}</span>
+            <img src={`/images/clients/${logo}`} alt="Client Logo" class="client-img" />
           </div>
         ))}
       </div>
@@ -41,10 +32,10 @@ const clients = [
 
 <style>
   .clients-section {
-    padding: 64px 0;
+    padding: 80px 0;
     background: #ffffff;
-    border-top: 1px solid #f3f4f6;
-    border-bottom: 1px solid #f3f4f6;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
     overflow: hidden;
   }
 
@@ -54,54 +45,61 @@ const clients = [
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #94a3b8;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-weight: 800;
   }
 
   .logo-track {
     display: flex;
     width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   }
 
   .logo-list {
     display: flex;
-    animation: scroll 40s linear infinite;
+    align-items: center;
+    animation: scroll 60s linear infinite;
   }
 
   .logo-item {
-    width: 320px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    width: 250px;
     padding: 0 40px;
     flex-shrink: 0;
-  }
-
-  .logo-circle {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: 800;
-    font-size: 1.1rem;
-    border: 1px solid rgba(0,0,0,0.05);
+    align-items: center;
   }
 
-  .client-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #475569;
-    white-space: nowrap;
+  .client-img {
+    max-width: 160px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+  }
+
+  .logo-item:hover .client-img {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
   }
 
   @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-320px * 8)); }
+    100% { transform: translateX(calc(-250px * 19)); }
   }
 
   .logo-track:hover .logo-list {
     animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    .logo-item {
+      width: 180px;
+      padding: 0 20px;
+    }
+    @keyframes scroll {
+      100% { transform: translateX(calc(-180px * 19)); }
+    }
   }
 </style>
