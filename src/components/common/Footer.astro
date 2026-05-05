@@ -1,0 +1,145 @@
+---
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="LeadMan CRM Logo" class="footer-logo" />
+        <p>Smart CRM built for Indian SMEs. Automate your sales, increase productivity, and grow your business with ease.</p>
+        <div class="social-links">
+          {/* Social icons would go here */}
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Product</h4>
+        <a href="/features">Features</a>
+        <a href="/integrations">Integrations</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Book a Demo</a>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">Our Story</a>
+        <a href="/about">Mindstien Technologies</a>
+      </div>
+      
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <p>S-405, Twinstar, 150 Ring Road,<br/>Rajkot, Gujarat - 360005</p>
+        <p><strong>Phone:</strong> +91 94097 60076</p>
+        <p><strong>Email:</strong> info@leadman.in</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Mindstien Technologies. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 100px 0 40px;
+    background: #000;
+    color: #9ca3af;
+    border-top: 1px solid #1f2937;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 80px;
+  }
+
+  .footer-logo {
+    height: 40px;
+    margin-bottom: 24px;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 300px;
+  }
+
+  .footer-links h4, .footer-contact h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: #0a84ff;
+  }
+
+  .footer-contact p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .footer-contact strong {
+    color: white;
+  }
+
+  .footer-bottom {
+    padding-top: 40px;
+    border-top: 1px solid #1f2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+  }
+
+  .legal-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .legal-links a {
+    color: #6b7280;
+    text-decoration: none;
+  }
+
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+</style>

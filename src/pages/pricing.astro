@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/common/Navbar.astro';
+import PricingSection from '../components/sections/Pricing.astro';
+import Footer from '../components/common/Footer.astro';
+
+const faqs = [
+  {
+    q: "Is there a free trial available?",
+    a: "We offer a personalized demo and a guided walkthrough of the system. Once you're comfortable, you can start with any plan that fits your needs."
+  },
+  {
+    q: "Can I upgrade or downgrade my plan later?",
+    a: "Yes, you can change your subscription tier at any time from your billing dashboard. Changes are reflected in the next billing cycle."
+  },
+  {
+    q: "What kind of support is included?",
+    a: "All plans include email and chat support. Our Accelerator plan includes priority support and a dedicated account manager."
+  },
+  {
+    q: "Do you offer custom integrations?",
+    a: "Yes, for larger teams or specific requirements, we offer custom implementation and integration services. Contact our sales team for a quote."
+  }
+];
+---
+
+<BaseLayout title="Pricing | LeadMan CRM">
+  <Navbar />
+  
+  <main>
+    <div class="pricing-hero">
+      <div class="container">
+        <h1>Simple, <span>Scaleable</span> Pricing</h1>
+        <p>No hidden fees. No setup costs. Just a powerful CRM built to grow with your business.</p>
+      </div>
+    </div>
+
+    <PricingSection />
+
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="text-center">Frequently Asked <span>Questions</span></h2>
+        <div class="faq-grid">
+          {faqs.map((faq) => (
+            <div class="faq-item">
+              <h3>{faq.q}</h3>
+              <p>{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-cta">
+      <div class="container">
+        <div class="demo-card">
+          <h2>Still not sure which plan is right for you?</h2>
+          <p>Book a free 15-minute discovery call with our sales experts.</p>
+          <a href="/contact" class="btn btn-primary">Book a Discovery Call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  main {
+    padding-top: 80px;
+  }
+
+  .pricing-hero {
+    padding: 100px 0 20px;
+    background: white;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: #111827;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  h1 span {
+    color: #0a84ff;
+  }
+
+  .pricing-hero p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-section {
+    padding: 100px 0;
+    background: #f9fafb;
+  }
+
+  .text-center {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+  }
+
+  .text-center span {
+    color: #0a84ff;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .faq-item h3 {
+    font-size: 1.2rem;
+    color: #111827;
+    margin-bottom: 16px;
+  }
+
+  .faq-item p {
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .demo-cta {
+    padding: 100px 0;
+    background: white;
+  }
+
+  .demo-card {
+    background: #f3f4f6;
+    padding: 60px;
+    border-radius: 32px;
+    text-align: center;
+  }
+
+  .demo-card h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: #111827;
+  }
+
+  .demo-card p {
+    color: #4b5563;
+    margin-bottom: 32px;
+    font-size: 1.1rem;
+  }
+
+  .btn-primary {
+    background: #0a84ff;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: #0070e0;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .demo-card {
+      padding: 40px 20px;
+    }
+  }
+</style>

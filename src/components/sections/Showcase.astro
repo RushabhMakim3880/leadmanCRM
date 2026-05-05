@@ -1,0 +1,153 @@
+---
+const showcases = [
+  {
+    title: "Manage Leads with Ease",
+    desc: "A clean, card-based interface to track every inquiry through its lifecycle.",
+    img: "/images/ManageLeads.png"
+  },
+  {
+    title: "Deep Sales Insights",
+    desc: "Visualize your revenue and team performance with real-time analytics.",
+    img: "/images/Sales-Insights.png"
+  },
+  {
+    title: "Product Performance",
+    desc: "Identify your best-selling items and optimize your inventory.",
+    img: "/images/product-Insights.png"
+  }
+];
+---
+
+<section class="showcase-section section-padding">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-tag">Visual Tour</span>
+      <h2>Powerful Simplicity in <span class="text-primary">Action</span></h2>
+      <p>Don't just take our word for it. See the interface that's helping Indian SMEs scale.</p>
+    </div>
+
+    <div class="showcase-list">
+      {showcases.map((item, index) => (
+        <div class={`showcase-item ${index % 2 !== 0 ? 'reverse' : ''}`}>
+          <div class="showcase-content">
+            <div class="showcase-number">0{index + 1}</div>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+            <ul class="check-list">
+              <li>High-Density Interface</li>
+              <li>Real-time Data Sync</li>
+              <li>Mobile-Ready Design</li>
+            </ul>
+          </div>
+          <div class="showcase-image-box">
+            <div class="image-wrapper">
+              <img src={item.img} alt={item.title} class="showcase-img" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .showcase-section {
+    background: #ffffff;
+  }
+
+  .showcase-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    margin-top: 80px;
+  }
+
+  .showcase-item {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .showcase-item.reverse {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .showcase-item.reverse .showcase-content {
+    order: 2;
+  }
+
+  .showcase-item.reverse .showcase-image-box {
+    order: 1;
+  }
+
+  .showcase-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #f1f5f9;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .showcase-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .showcase-content p {
+    font-size: 1.125rem;
+    color: #64748b;
+    margin-bottom: 32px;
+  }
+
+  .check-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  .check-list li::before {
+    content: "✓";
+    color: #0066cc;
+    font-weight: 900;
+  }
+
+  .image-wrapper {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 24px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+  }
+
+  .showcase-item:hover .image-wrapper {
+    transform: scale(1.02);
+  }
+
+  .showcase-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+  }
+
+  @media (max-width: 1024px) {
+    .showcase-item, .showcase-item.reverse {
+      grid-template-columns: 1fr;
+      gap: 48px;
+      text-align: center;
+    }
+    .showcase-content { order: 1 !important; }
+    .showcase-image-box { order: 2 !important; }
+    .check-list { justify-content: center; }
+  }
+</style>

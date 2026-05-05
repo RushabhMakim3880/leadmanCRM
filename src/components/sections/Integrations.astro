@@ -1,0 +1,92 @@
+---
+const integrations = [
+  { name: "WhatsApp", logo: "💬" },
+  { name: "IndiaMART", logo: "🏪" },
+  { name: "TradeIndia", logo: "🏗️" },
+  { name: "Facebook", logo: "👥" },
+  { name: "Websites", logo: "🌐" },
+  { name: "Google", logo: "🔍" }
+];
+---
+
+<section class="integrations-section section-padding">
+  <div class="container">
+    <div class="integrations-card">
+      <div class="showcase-header text-center">
+        <h2 class="text-gradient">Connect Your Universe</h2>
+        <p>LeadMan integrates seamlessly with the platforms where your business happens.</p>
+      </div>
+      
+      <div class="logo-cloud">
+        {integrations.map(item => (
+          <div class="logo-item" title={item.name}>
+            <span class="logo-icon">{item.logo}</span>
+            <span class="logo-name">{item.name}</span>
+          </div>
+        ))}
+      </div>
+      
+      <div class="integration-footer text-center">
+        <p>+ Custom API & Webhook support for deeper workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .integrations-card {
+    background: var(--color-slate-50);
+    padding: var(--space-12);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-slate-200);
+  }
+
+  .logo-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-8);
+    margin: var(--space-12) 0;
+  }
+
+  .logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-6);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-slate-200);
+    min-width: 140px;
+    transition: all 0.3s ease;
+  }
+
+  .logo-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary-400);
+    box-shadow: var(--shadow-md);
+  }
+
+  .logo-icon {
+    font-size: 2.5rem;
+  }
+
+  .logo-name {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-slate-700);
+  }
+
+  .integration-footer p {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    .logo-item {
+      min-width: 120px;
+    }
+  }
+</style>

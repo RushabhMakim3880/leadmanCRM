@@ -1,0 +1,147 @@
+---
+const testimonials = [
+  {
+    quote: "LeadMan transformed how our sales team operates. We no longer lose leads in spreadsheets. The pipeline visibility is a game-changer.",
+    author: "Rajesh Mehta",
+    title: "Founder, Mehta Engineering",
+    initials: "RM",
+    color: "#0066cc"
+  },
+  {
+    quote: "The Indiamart and TradeIndia integrations saved us hours of manual entry every day. It's the smartest investment we've made for our growth.",
+    author: "Amit Shah",
+    title: "Director, Shah Plastics",
+    initials: "AS",
+    color: "#10b981"
+  },
+  {
+    quote: "Finally, a CRM that understands the Indian SME workflow. Simple to use but incredibly powerful for tracking field visits and follow-ups.",
+    author: "Sanjay Patel",
+    title: "CEO, Patel Electronics",
+    initials: "SP",
+    color: "#f59e0b"
+  }
+];
+---
+
+<section id="testimonials" class="testimonials-section section-padding">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="badge">Success Stories</span>
+      <h2>Real impact for <span class="text-primary">Real Businesses</span></h2>
+      <p>Hear from business owners who scaled their sales operations with LeadMan.</p>
+    </div>
+
+    <div class="grid grid-3">
+      {testimonials.map(t => (
+        <div class="testimonial-card">
+          <div class="quote-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.1">
+              <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 7.34315 11.3602 6 13.017 6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 17.7614 19.7784 20 17.017 20H14.017V21ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H6.017C5.46472 8 5.017 8.44772 5.017 9V12C5.017 12.5523 4.56929 13 4.017 13H2.017C1.46472 13 1.01704 12.5523 1.01704 12V9C1.01704 7.34315 2.36019 6 4.01704 6H10.017C11.6739 6 13.017 7.34315 13.017 9V15C13.017 17.7614 10.7784 20 8.017 20H5.017V21Z"></path>
+            </svg>
+          </div>
+          
+          <p class="quote">"{t.quote}"</p>
+          
+          <div class="author-info">
+            <div class="avatar" style={`background-color: ${t.color}`}>
+              {t.initials}
+            </div>
+            <div class="meta">
+              <span class="name">{t.author}</span>
+              <span class="title">{t.title}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    background-color: #ffffff;
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 64px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card {
+    background: #ffffff;
+    padding: 48px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+  }
+
+  .quote-icon {
+    margin-bottom: 24px;
+    color: var(--primary);
+  }
+
+  .quote {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--text-body);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1rem;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .name {
+    font-weight: 700;
+    color: var(--text-heading);
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+</style>

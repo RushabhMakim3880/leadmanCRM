@@ -1,0 +1,97 @@
+---
+---
+<nav class="navbar">
+  <div class="container nav-container">
+    <div class="logo">
+      <a href="/">
+        <img src="/logo.png" alt="LeadMan CRM Logo" class="logo-img" />
+      </a>
+    </div>
+    
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/features" class="nav-link">Features</a>
+      <a href="/integrations" class="nav-link">Integrations</a>
+      <a href="/pricing" class="nav-link">Pricing</a>
+      <a href="/about" class="nav-link">About Us</a>
+      <a href="/contact" class="btn-demo">Book a Demo</a>
+    </div>
+
+    <button class="mobile-toggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo-img {
+    height: 36px;
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #1f2937;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #0066cc;
+  }
+
+  .btn-demo {
+    background-color: #0066cc !important;
+    color: #ffffff !important;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .btn-demo:hover {
+    background-color: #0052a3 !important;
+    transform: translateY(-1px);
+  }
+
+  .mobile-toggle {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

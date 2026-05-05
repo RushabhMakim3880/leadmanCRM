@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/common/Navbar.astro';
+import Footer from '../components/common/Footer.astro';
+
+const modules = [
+  {
+    title: "Lead Management",
+    desc: "Capture leads from IndiaMART, TradeIndia, Facebook, and your website automatically. No more manual entry errors.",
+    features: ["Auto-capture API", "Duplicate Prevention", "Smart Assignment", "Source ROI Tracking"],
+    icon: "🎯"
+  },
+  {
+    title: "Sales Execution",
+    desc: "Empower your team with a clear daily agenda. Focus on high-intent follow-ups and close deals faster.",
+    features: ["Task Management", "Meeting Notes", "Follow-up Reminders", "Sales Pipeline"],
+    icon: "📈"
+  },
+  {
+    title: "Document Automation",
+    desc: "Generate professional Quotations, Proforma Invoices, and Invoices in seconds. Unified GST verification included.",
+    features: ["Quotation Builder", "PI & Invoice", "GST Verification", "Multi-Currency"],
+    icon: "📄"
+  },
+  {
+    title: "Mobility & Field Tracking",
+    desc: "Your sales team is mobile; your CRM should be too. Track field visits and punch locations in real-time.",
+    features: ["Mobile App", "Location Punching", "Visitor Diary", "Offline Support"],
+    icon: "📱"
+  },
+  {
+    title: "Reporting & Insights",
+    desc: "Data-driven decisions for business owners. Monitor team performance and sales velocity with ease.",
+    features: ["Dynamic Dashboard", "Team Collaboration", "Org Hierarchy", "Custom Reports"],
+    icon: "📊"
+  },
+  {
+    title: "Advanced Integrations",
+    desc: "Connect LeadMan to your existing ecosystem via Webhooks and open APIs.",
+    features: ["WhatsApp API", "Webhooks", "Custom APIs", "Third-party Apps"],
+    icon: "🔗"
+  }
+];
+---
+
+<BaseLayout title="Features | LeadMan CRM">
+  <Navbar />
+  
+  <main>
+    <section class="features-hero">
+      <div class="container">
+        <h1>Powerful Capabilities for <span>Growing SMEs</span></h1>
+        <p>LeadMan CRM combines simplicity with enterprise-grade power to automate your sales workflow.</p>
+      </div>
+    </section>
+
+    <section class="modules-section">
+      <div class="container">
+        <div class="module-grid">
+          {modules.map((module) => (
+            <div class="module-card">
+              <div class="module-icon">{module.icon}</div>
+              <h3>{module.title}</h3>
+              <p>{module.desc}</p>
+              <ul class="module-features">
+                {module.features.map((f) => (
+                  <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Ready to see these features in action?</h2>
+          <a href="/contact" class="btn btn-white">Get a Personalized Demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  main {
+    padding-top: 80px;
+  }
+
+  .features-hero {
+    padding: 100px 0 60px;
+    background: white;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: #111827;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  h1 span {
+    color: #0a84ff;
+  }
+
+  .features-hero p {
+    font-size: 1.25rem;
+    color: #4b5563;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .modules-section {
+    padding: 80px 0;
+    background: #f9fafb;
+  }
+
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  .module-card {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+  }
+
+  .module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    border-color: #0a84ff;
+  }
+
+  .module-icon {
+    font-size: 3rem;
+    margin-bottom: 24px;
+  }
+
+  .module-card h3 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 16px;
+  }
+
+  .module-card p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .module-features {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .module-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #374151;
+    font-weight: 600;
+  }
+
+  .module-features li svg {
+    width: 16px;
+    height: 16px;
+    color: #10b981;
+    flex-shrink: 0;
+  }
+
+  .cta-section {
+    padding: 80px 0;
+    background: white;
+  }
+
+  .cta-card {
+    background: #0a84ff;
+    border-radius: 32px;
+    padding: 60px;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+  }
+
+  .btn-white {
+    background: white;
+    color: #0a84ff;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .btn-white:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    .module-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-card {
+      padding: 40px 20px;
+    }
+
+    .module-features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

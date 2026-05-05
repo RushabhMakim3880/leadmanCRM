@@ -1,0 +1,135 @@
+---
+const integrations = [
+  {
+    name: "WhatsApp API",
+    category: "Communication",
+    desc: "Send automated alerts, follow-up messages, and proforma invoices directly to your customers' WhatsApp.",
+    initials: "WA",
+    color: "#25D366"
+  },
+  {
+    name: "IndiaMART",
+    category: "Marketplace",
+    desc: "Sync leads in real-time from India's largest marketplace. No manual entry needed.",
+    initials: "IM",
+    color: "#bf0000"
+  },
+  {
+    name: "TradeIndia",
+    category: "Marketplace",
+    desc: "Seamlessly capture high-intent B2B leads from TradeIndia directly into your sales pipeline.",
+    initials: "TI",
+    color: "#0056b3"
+  },
+  {
+    name: "Facebook Lead Ads",
+    category: "Marketing",
+    desc: "Instantly route leads from your Facebook & Instagram campaigns to your sales team.",
+    initials: "FB",
+    color: "#1877F2"
+  },
+  {
+    name: "Custom Webhooks",
+    category: "Developer",
+    desc: "Push or pull data between LeadMan and your internal systems or other SaaS apps.",
+    initials: "WH",
+    color: "#6366f1"
+  },
+  {
+    name: "REST API",
+    category: "Developer",
+    desc: "Build custom workflows and proprietary integrations with our robust developer API.",
+    initials: "API",
+    color: "#111827"
+  }
+];
+---
+
+<section class="integrations-grid-section section-padding">
+  <div class="container">
+    <div class="integrations-grid">
+      {integrations.map((item) => (
+        <div class="integration-card">
+          <div class="card-top">
+            <div class="int-icon" style={`background-color: ${item.color}15; color: ${item.color}`}>
+              {item.initials}
+            </div>
+            <span class="category-tag">{item.category}</span>
+          </div>
+          <h3>{item.name}</h3>
+          <p>{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .integrations-grid-section {
+    background: var(--bg-subtle);
+  }
+
+  .integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+  }
+
+  .integration-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .integration-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .int-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .category-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 4px 12px;
+    background: var(--bg-subtle);
+    border-radius: 100px;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--border-color);
+  }
+
+  .integration-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+  }
+
+  .integration-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/common/Navbar.astro';
+import Hero from '../components/sections/Hero.astro';
+import Pipeline from '../components/sections/Pipeline.astro';
+import Showcase from '../components/sections/Showcase.astro';
+import Clients from '../components/sections/Clients.astro';
+import Features from '../components/sections/Features.astro';
+import About from '../components/sections/About.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import Contact from '../components/sections/Contact.astro';
+import Footer from '../components/common/Footer.astro';
+---
+
+<BaseLayout title="Smart CRM for Indian SMEs | LeadMan CRM">
+	<Navbar />
+	<main>
+		<Hero />
+		<Pipeline />
+    <Clients />
+    <Showcase />
+		<Features />
+		<About />
+    <Testimonials />
+		<Contact />
+	</main>
+	<Footer />
+</BaseLayout>
+
+<style>
+  main {
+    padding-top: 80px; /* Navbar offset */
+  }
+</style>

@@ -1,0 +1,107 @@
+---
+const clients = [
+  { name: "Mehta Engineering", initials: "ME", color: "#0066cc" },
+  { name: "Shah Plastics", initials: "SP", color: "#10b981" },
+  { name: "Patel Electronics", initials: "PE", color: "#f59e0b" },
+  { name: "Growth SME", initials: "GS", color: "#ef4444" },
+  { name: "Twinstar Biz", initials: "TB", color: "#8b5cf6" },
+  { name: "Mindstien Lab", initials: "ML", color: "#3b82f6" },
+  { name: "Rajkot Ind", initials: "RI", color: "#ec4899" },
+  { name: "Global Sales", initials: "GS", color: "#14b8a6" },
+];
+---
+
+<section class="clients-section">
+  <div class="container">
+    <p class="section-tag">Trusted by 250+ Growth-Minded Businesses</p>
+    
+    <div class="logo-track">
+      <div class="logo-list">
+        {clients.map((client) => (
+          <div class="logo-item">
+            <div class="logo-circle" style={`background-color: ${client.color}15; color: ${client.color}`}>
+              {client.initials}
+            </div>
+            <span class="client-name">{client.name}</span>
+          </div>
+        ))}
+        {/* Duplicate for infinite effect */}
+        {clients.map((client) => (
+          <div class="logo-item">
+            <div class="logo-circle" style={`background-color: ${client.color}15; color: ${client.color}`}>
+              {client.initials}
+            </div>
+            <span class="client-name">{client.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .clients-section {
+    padding: 64px 0;
+    background: #ffffff;
+    border-top: 1px solid #f3f4f6;
+    border-bottom: 1px solid #f3f4f6;
+    overflow: hidden;
+  }
+
+  .section-tag {
+    text-align: center;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #94a3b8;
+    margin-bottom: 40px;
+    font-weight: 800;
+  }
+
+  .logo-track {
+    display: flex;
+    width: 100%;
+  }
+
+  .logo-list {
+    display: flex;
+    animation: scroll 40s linear infinite;
+  }
+
+  .logo-item {
+    width: 320px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 40px;
+    flex-shrink: 0;
+  }
+
+  .logo-circle {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .client-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #475569;
+    white-space: nowrap;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-320px * 8)); }
+  }
+
+  .logo-track:hover .logo-list {
+    animation-play-state: paused;
+  }
+</style>
