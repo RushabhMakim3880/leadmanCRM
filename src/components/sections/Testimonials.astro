@@ -1,25 +1,46 @@
 ---
 const testimonials = [
   {
-    quote: "LeadMan transformed how our sales team operates. We no longer lose leads in spreadsheets. The pipeline visibility is a game-changer.",
-    author: "Rajesh Mehta",
-    title: "Founder, Mehta Engineering",
-    initials: "RM",
+    quote: "As our company expanded, managing customer data became overwhelming. This CRM software has been a lifesaver. It organizes everything in one place and has significantly improved communication across departments. We’ve seen real-time improvements in lead management and follow-ups. The scalability of this CRM is exactly what we needed!",
+    author: "Sohil Ranpariya",
+    title: "Ajanta Manufacturers",
+    initials: "SR",
     color: "#0066cc"
   },
   {
-    quote: "The Indiamart and TradeIndia integrations saved us hours of manual entry every day. It's the smartest investment we've made for our growth.",
-    author: "Amit Shah",
-    title: "Director, Shah Plastics",
-    initials: "AS",
+    quote: "Getting started with the CRM was easy thanks to the onboarding support from the team. I first heard about it from a friend who said, ‘If you need a CRM, contact them. Otherwise, forget about having one.’ Now, I understand why he gave such a great recommendation. Thank you, Team Leadman!",
+    author: "Gaurang Patoria",
+    title: "Shruti Kitchenware Manufacturer",
+    initials: "GP",
     color: "#10b981"
   },
   {
-    quote: "Finally, a CRM that understands the Indian SME workflow. Simple to use but incredibly powerful for tracking field visits and follow-ups.",
-    author: "Sanjay Patel",
-    title: "CEO, Patel Electronics",
-    initials: "SP",
+    quote: "Before Leadman CRM, we tracked inquiries manually and often lost them. Since using it, we can follow up on every lead, update statuses easily, and generate useful reports. Team meetings are simpler with Excel exports, and tracking work has become effortless. We chose Leadman CRM for its simple interface, easy inquiry forwarding, and powerful follow-up features.",
+    author: "Rahul Surve",
+    title: "Ganesh Machine Tools",
+    initials: "RS",
     color: "#f59e0b"
+  },
+  {
+    quote: "After trying google sheets and many crm products, we finally landed on using CRM developed by Leadman Team. Since we started using it, we have never looked back. our team got comfirtable with CRM so smoothly and we could clearlly observe the perofrmance improvement of our sales team.",
+    author: "Alpesh Thesia",
+    title: "Vimox Innovation Limited, Rajkot",
+    initials: "AT",
+    color: "#ef4444"
+  },
+  {
+    quote: "The flexibility of CRM software is what impressed us the most. They worked closely with us to customize the solution, tailoring it perfectly to our workflow. The integration with our existing ERP system was smooth, and now, our teams are more connected and productive than ever before. Customer service is top-notch too!",
+    author: "Rupesh Amreliya",
+    title: "Hydropower-Tech Engineering",
+    initials: "RA",
+    color: "#8b5cf6"
+  },
+  {
+    quote: "Mindstien Technologies delivered exactly what we needed—an efficient solar energy solution and a powerful CRM system to manage our growing client base. Their CRM has improved our ability to track customer interactions and follow up on leads.",
+    author: "Subhash Chopda",
+    title: "Emisun Solar Private Limited",
+    initials: "SC",
+    color: "#14b8a6"
   }
 ];
 ---
@@ -27,86 +48,114 @@ const testimonials = [
 <section id="testimonials" class="testimonials-section section-padding">
   <div class="container">
     <div class="section-header text-center">
-      <span class="badge">Success Stories</span>
+      <span class="section-tag">Success Stories</span>
       <h2>Real impact for <span class="text-primary">Real Businesses</span></h2>
       <p>Hear from business owners who scaled their sales operations with LeadMan.</p>
     </div>
 
-    <div class="grid grid-3">
-      {testimonials.map(t => (
-        <div class="testimonial-card">
-          <div class="quote-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.1">
-              <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 7.34315 11.3602 6 13.017 6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 17.7614 19.7784 20 17.017 20H14.017V21ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H6.017C5.46472 8 5.017 8.44772 5.017 9V12C5.017 12.5523 4.56929 13 4.017 13H2.017C1.46472 13 1.01704 12.5523 1.01704 12V9C1.01704 7.34315 2.36019 6 4.01704 6H10.017C11.6739 6 13.017 7.34315 13.017 9V15C13.017 17.7614 10.7784 20 8.017 20H5.017V21Z"></path>
-            </svg>
-          </div>
-          
-          <p class="quote">"{t.quote}"</p>
-          
-          <div class="author-info">
-            <div class="avatar" style={`background-color: ${t.color}`}>
-              {t.initials}
+    <div class="testimonial-slider-container">
+      <div class="testimonial-slider" id="testimonialSlider">
+        {testimonials.map((t, index) => (
+          <div class={`testimonial-slide ${index === 0 ? 'active' : ''}`} data-index={index}>
+            <div class="testimonial-card">
+              <div class="quote-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" opacity="0.1">
+                  <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 7.34315 11.3602 6 13.017 6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 17.7614 19.7784 20 17.017 20H14.017V21ZM5.017 21L5.017 18C5.017 16.8954 5.91243 16 7.017 16H10.017C10.5693 16 11.017 15.5523 11.017 15V9C11.017 8.44772 10.5693 8 10.017 8H6.017C5.46472 8 5.017 8.44772 5.017 9V12C5.017 12.5523 4.56929 13 4.017 13H2.017C1.46472 13 1.01704 12.5523 1.01704 12V9C1.01704 7.34315 2.36019 6 4.01704 6H10.017C11.6739 6 13.017 7.34315 13.017 9V15C13.017 17.7614 10.7784 20 8.017 20H5.017V21Z"></path>
+                </svg>
+              </div>
+              
+              <p class="quote">"{t.quote}"</p>
+              
+              <div class="author-info">
+                <div class="avatar" style={`background-color: ${t.color}`}>
+                  {t.initials}
+                </div>
+                <div class="meta">
+                  <span class="name">{t.author}</span>
+                  <span class="title">{t.title}</span>
+                </div>
+              </div>
             </div>
-            <div class="meta">
-              <span class="name">{t.author}</span>
-              <span class="title">{t.title}</span>
-            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
+      <div class="slider-dots">
+        {testimonials.map((_, index) => (
+          <button class={`dot ${index === 0 ? 'active' : ''}`} data-index={index} aria-label={`Go to slide ${index + 1}`}></button>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .testimonials-section {
-    background-color: #ffffff;
+    background-color: #f8fbff;
+    overflow: hidden;
   }
 
   .section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 64px;
+    margin-bottom: 64px;
   }
 
-  .badge {
-    display: inline-block;
-    padding: 6px 14px;
-    background: var(--primary-soft);
-    color: var(--primary);
-    border-radius: 100px;
-    font-size: 0.75rem;
-    font-weight: 700;
+  .section-tag {
+    font-weight: 800;
+    color: #0066cc;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    display: block;
     margin-bottom: 16px;
+  }
+
+  .testimonial-slider-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .testimonial-slider {
+    position: relative;
+    height: 420px;
+  }
+
+  .testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(50px);
+  }
+
+  .testimonial-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
   }
 
   .testimonial-card {
     background: #ffffff;
-    padding: 48px;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .testimonial-card:hover {
-    border-color: var(--primary);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-5px);
+    padding: 60px;
+    border-radius: 32px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 20px 50px rgba(0, 102, 204, 0.05);
   }
 
   .quote-icon {
     margin-bottom: 24px;
-    color: var(--primary);
+    color: #0066cc;
   }
 
   .quote {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-style: italic;
-    color: var(--text-body);
-    line-height: 1.7;
-    margin-bottom: 32px;
+    color: #1e293b;
+    line-height: 1.8;
+    margin-bottom: 40px;
   }
 
   .author-info {
@@ -114,19 +163,19 @@ const testimonials = [
     align-items: center;
     gap: 16px;
     padding-top: 32px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid #f1f5f9;
   }
 
   .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .meta {
@@ -135,13 +184,84 @@ const testimonials = [
   }
 
   .name {
-    font-weight: 700;
-    color: var(--text-heading);
-    font-size: 1rem;
+    font-weight: 800;
+    color: #111827;
+    font-size: 1.1rem;
   }
 
   .title {
-    font-size: 0.875rem;
-    color: var(--text-muted);
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: #0066cc;
+    width: 32px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-card {
+      padding: 32px;
+    }
+    .testimonial-slider {
+      height: 550px;
+    }
+    .quote {
+      font-size: 1.1rem;
+    }
   }
 </style>
+
+<script>
+  function initSlider() {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentSlide = index;
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+      });
+    });
+
+    // Auto slide
+    setInterval(() => {
+      let next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }, 6000);
+  }
+
+  // Initialize on load
+  initSlider();
+  
+  // Re-init on Astro transitions if using them
+  document.addEventListener('astro:after-swap', initSlider);
+</script>
