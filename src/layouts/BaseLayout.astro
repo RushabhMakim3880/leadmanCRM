@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ContactModal from '../components/common/ContactModal.astro';
 
 interface Props {
 	title: string;
@@ -26,5 +27,6 @@ const { title, description = "LeadMan is the smart CRM designed for Indian SMEs.
 	</head>
 	<body>
 		<slot />
+    <ContactModal />
 	</body>
 </html>

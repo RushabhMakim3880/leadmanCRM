@@ -1,55 +1,63 @@
 ---
 ---
+
 <section id="contact" class="contact-section section-padding">
   <div class="container">
     <div class="contact-grid">
-      <div class="contact-text">
+      <div class="contact-info">
         <span class="section-tag">Contact Us</span>
         <h2>Ready to <span class="text-primary">Scale?</span></h2>
-        <p class="description">Book a personalized walkthrough and see how LeadMan can transform your sales operations.</p>
+        <p>Book a personalized walkthrough and see how LeadMan can transform your sales operations.</p>
         
-        <div class="contact-methods">
-          <div class="method-item">
-            <div class="method-icon">📍</div>
-            <div class="method-content">
-              <h4>VISIT US</h4>
-              <p>S-405, Twinstar, 150 Ring Road, Rajkot (Gujarat)</p>
+        <div class="method-cards">
+          <div class="method-card">
+            <div class="card-icon">📍</div>
+            <div class="card-text">
+              <label>Visit Us</label>
+              <strong>S-405, Twinstar, 150 Ring Road, Rajkot (Gujarat)</strong>
             </div>
           </div>
-          <div class="method-item">
-            <div class="method-icon">📞</div>
-            <div class="method-content">
-              <h4>CALL US</h4>
-              <p>+91 94097 60076</p>
+          
+          <div class="method-card">
+            <div class="card-icon">📞</div>
+            <div class="card-text">
+              <label>Call Us</label>
+              <strong>+91 94097 60076</strong>
             </div>
           </div>
-          <div class="method-item">
-            <div class="method-icon">✉️</div>
-            <div class="method-content">
-              <h4>EMAIL US</h4>
-              <p>info@leadman.in</p>
+          
+          <div class="method-card">
+            <div class="card-icon">✉️</div>
+            <div class="card-text">
+              <label>Email Us</label>
+              <strong>info@leadman.in</strong>
             </div>
           </div>
         </div>
       </div>
 
       <div class="contact-form-wrapper">
-        <form class="lead-form">
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" placeholder="e.g. Rajesh Kumar" required />
-          </div>
-          <div class="form-group">
-            <label>Business Name</label>
-            <input type="text" placeholder="e.g. Mehta Engineering" required />
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="e.g. +91 98765 43210" required />
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Request Demo</button>
-          <p class="form-note">No credit card required. Onboarding assistance included.</p>
-        </form>
+        <div class="form-card">
+          <form class="actual-form">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="e.g. Rajesh Kumar" required />
+            </div>
+            
+            <div class="form-group">
+              <label>Business Name</label>
+              <input type="text" placeholder="e.g. Mehta Engineering" required />
+            </div>
+            
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="e.g. +91 98765 43210" required />
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Request Demo</button>
+            <p class="form-note">No credit card required. Onboarding assistance included.</p>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -57,7 +65,7 @@
 
 <style>
   .contact-section {
-    background-color: #f8fbff;
+    background-color: #ffffff;
   }
 
   .contact-grid {
@@ -77,69 +85,119 @@
     margin-bottom: 16px;
   }
 
-  .description {
+  .contact-info h2 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .contact-info p {
     font-size: 1.25rem;
-    color: #4b5563;
+    color: #64748b;
     margin-bottom: 48px;
+    line-height: 1.6;
   }
 
-  .contact-methods {
-    display: grid;
-    gap: 32px;
+  .method-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
-  .method-item {
+  .method-card {
     display: flex;
     gap: 20px;
-    align-items: flex-start;
+    align-items: center;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
   }
 
-  .method-icon {
-    width: 48px;
-    height: 48px;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
+  .method-card:hover {
+    transform: translateX(10px);
+    border-color: #e2e8f0;
+    box-shadow: 0 10px 20px rgba(0, 102, 204, 0.05);
+  }
+
+  .card-icon {
+    width: 56px;
+    height: 56px;
+    background: #f8fbff;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    font-size: 1.5rem;
+    flex-shrink: 0;
   }
 
-  .method-content h4 {
+  .card-text label {
+    display: block;
     font-size: 0.75rem;
     font-weight: 800;
-    color: #6b7280;
+    text-transform: uppercase;
+    color: #94a3b8;
     margin-bottom: 4px;
-    letter-spacing: 1px;
   }
 
-  .method-content p {
+  .card-text strong {
+    font-size: 1.1rem;
+    color: #1e293b;
     font-weight: 700;
-    color: #111827;
-    margin-bottom: 0;
   }
 
-  .contact-form-wrapper {
+  .form-card {
     background: #ffffff;
-    padding: 48px;
+    padding: 60px;
     border-radius: 32px;
     border: 1px solid #e5e7eb;
-    box-shadow: 0 20px 50px rgba(0, 102, 204, 0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
   }
 
-  .btn-full {
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #1e293b;
+    margin-bottom: 10px;
+  }
+
+  .form-group input {
     width: 100%;
-    margin-top: 12px;
+    padding: 16px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+  }
+
+  .form-group input:focus {
+    border-color: #0066cc;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+  }
+
+  .btn-block {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1rem;
   }
 
   .form-note {
     text-align: center;
     font-size: 0.85rem;
-    color: #6b7280;
-    margin-top: 20px;
-    margin-bottom: 0;
+    color: #64748b;
+    margin-top: 24px;
   }
 
   @media (max-width: 1024px) {
@@ -147,8 +205,23 @@
       grid-template-columns: 1fr;
       gap: 60px;
     }
-    .contact-form-wrapper {
-      padding: 32px;
+    .contact-info {
+      text-align: center;
+    }
+    .method-card {
+      text-align: left;
+    }
+    .method-cards {
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .form-card {
+      padding: 30px 20px;
+    }
+    .contact-info h2 {
+      font-size: 2.25rem;
     }
   }
 </style>
