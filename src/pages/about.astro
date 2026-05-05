@@ -39,6 +39,34 @@ import Footer from '../components/common/Footer.astro';
       </div>
     </section>
 
+    <section class="deep-dive-section section-padding">
+      <div class="container">
+        <div class="intro-story">
+          <p>
+            Leadman CRM’s “story” is that it was created specifically to solve common sales‑management pain points for small and medium‑sized enterprises (SMEs) that were still relying on spreadsheets, manual WhatsApp follow‑ups, and scattered systems.
+          </p>
+        </div>
+
+        <div class="dive-grid">
+          <div class="dive-card">
+            <h3>Where the idea came from</h3>
+            <ul>
+              <li>The product is positioned as a simple, affordable, MSME‑focused CRM that helps businesses move from Excel/WhatsApp chaos to a single, organized sales‑automation platform.</li>
+              <li>Marketing and pitch materials emphasize data‑driven decisions, systematic sales tracking, and AI‑assisted follow‑ups so sales teams can be more productive and close more deals.</li>
+            </ul>
+          </div>
+
+          <div class="dive-card">
+            <h3>How the company positions itself</h3>
+            <ul>
+              <li>Leadman CRM markets itself as “designed for sales, productivity, growth, and automation,” targeting owners and managers who want better visibility into leads, pipelines, and team performance.</li>
+              <li>The brand story is built around enabling SMEs to compete with bigger players by systematizing their sales process without needing expensive enterprise CRM setups.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="philosophy-section">
       <div class="container">
         <div class="philosophy-grid">
@@ -213,6 +241,74 @@ import Footer from '../components/common/Footer.astro';
   .philo-card p {
     color: #4b5563;
     line-height: 1.6;
+  }
+
+  .deep-dive-section {
+    background: #ffffff;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .intro-story {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+
+  .intro-story p {
+    font-size: 1.4rem;
+    color: #1e293b;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  .dive-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .dive-card {
+    background: #f8fbff;
+    padding: 48px;
+    border-radius: 24px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .dive-card h3 {
+    font-size: 1.75rem;
+    color: #0066cc;
+    margin-bottom: 24px;
+  }
+
+  .dive-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .dive-card li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 20px;
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 1.1rem;
+  }
+
+  .dive-card li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0066cc;
+    font-weight: 800;
+  }
+
+  @media (max-width: 768px) {
+    .dive-grid {
+      grid-template-columns: 1fr;
+    }
+    .intro-story p {
+      font-size: 1.1rem;
+    }
   }
 
   .team-cta {
