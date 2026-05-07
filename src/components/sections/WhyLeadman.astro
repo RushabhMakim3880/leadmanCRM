@@ -1,0 +1,117 @@
+---
+const parameters = [
+  {
+    title: "No lead loss",
+    desc: "(Auto follow-ups)",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>`
+  },
+  {
+    title: "Faster response",
+    desc: "(WhatsApp Integration)",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>`
+  },
+  {
+    title: "Zero confusion",
+    desc: "(Single Dashboard)",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>`
+  },
+  {
+    title: "Built for Indian businesses",
+    desc: "(Indian SMEs)",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="2"></line><line x1="15" y1="22" x2="15" y2="2"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="10" x2="20" y2="10"></line><line x1="4" y1="14" x2="20" y2="14"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>`
+  }
+];
+---
+
+<section class="why-leadman-section section-padding">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Why <span class="text-primary">Leadman CRM?</span></h2>
+    </div>
+
+    <div class="parameters-grid">
+      {parameters.map((item) => (
+        <div class="parameter-card">
+          <div class="parameter-icon" set:html={item.icon} />
+          <h3>{item.title}</h3>
+          <p>{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-leadman-section {
+    background-color: #ffffff;
+    padding-bottom: 80px;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .parameters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .parameter-card {
+    background: #f8fafc;
+    padding: 32px 24px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+  }
+
+  .parameter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-color: #0066cc;
+  }
+
+  .parameter-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    color: #0066cc;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .parameter-icon :global(svg) {
+    width: 24px;
+    height: 24px;
+  }
+
+  .parameter-card h3 {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 8px;
+  }
+
+  .parameter-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .parameters-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .parameters-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

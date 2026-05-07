@@ -8,6 +8,7 @@ const integrations = [
     name: "WhatsApp API",
     category: "Communication",
     desc: "Send automated alerts, follow-up messages, and proforma invoices directly to your customers' WhatsApp.",
+    logo: "/images/integrations/whatsapp.png",
     initials: "WA",
     color: "#25D366"
   },
@@ -15,6 +16,7 @@ const integrations = [
     name: "IndiaMART",
     category: "Marketplace",
     desc: "Sync leads in real-time from India's largest marketplace. No manual entry needed.",
+    logo: "/images/integrations/indiamart.png",
     initials: "IM",
     color: "#bf0000"
   },
@@ -22,6 +24,7 @@ const integrations = [
     name: "TradeIndia",
     category: "Marketplace",
     desc: "Seamlessly capture high-intent B2B leads from TradeIndia directly into your sales pipeline.",
+    logo: "/images/integrations/tradeindia.png",
     initials: "TI",
     color: "#0056b3"
   },
@@ -29,22 +32,25 @@ const integrations = [
     name: "Facebook Lead Ads",
     category: "Marketing",
     desc: "Instantly route leads from your Facebook & Instagram campaigns to your sales team.",
+    logo: "/images/integrations/facebook.png",
     initials: "FB",
     color: "#1877F2"
   },
   {
-    name: "Custom Webhooks",
-    category: "Developer",
-    desc: "Push or pull data between LeadMan and your internal systems or other SaaS apps.",
-    initials: "WH",
-    color: "#6366f1"
+    name: "ExportersIndia",
+    category: "Marketplace",
+    desc: "Bring your ExportersIndia leads directly into Leadman CRM for faster engagement.",
+    logo: "/images/integrations/exportersindia.png",
+    initials: "EI",
+    color: "#ff6600"
   },
   {
-    name: "REST API",
-    category: "Developer",
-    desc: "Build custom workflows and proprietary integrations with our robust developer API.",
-    initials: "API",
-    color: "#111827"
+    name: "Justdial",
+    category: "Marketplace",
+    desc: "Automatically sync Justdial inquiries to your sales pipeline and assign them instantly.",
+    logo: "/images/integrations/justdial.png",
+    initials: "JD",
+    color: "#ff6600"
   }
 ];
 ---
@@ -68,7 +74,8 @@ const integrations = [
             <div class="integration-card">
               <div class="card-top">
                 <div class="int-icon" style={`background-color: ${item.color}15; color: ${item.color}; border-color: ${item.color}30`}>
-                  {item.initials}
+                  <img src={item.logo} alt={item.name} onerror={`this.style.display='none'; this.nextElementSibling.style.display='inline-block';`} class="int-logo-img" />
+                  <span style="display: none; width: 100%; text-align: center;">{item.initials}</span>
                 </div>
                 <span class="category-tag">{item.category}</span>
               </div>
@@ -84,9 +91,9 @@ const integrations = [
       <div class="container">
         <div class="dev-banner dark-section">
           <div class="dev-content">
-            <h2>Built for Developers too</h2>
-            <p>Our open architecture means you can build anything on top of LeadMan. Access documentation and API keys in your dashboard.</p>
-            <a href="#" class="btn btn-primary open-modal">Get in Touch</a>
+            <h2>Unlock the Full Potential of Your Sales Ecosystem</h2>
+            <p>Connect LeadMan CRM with all your favorite tools to create a seamless, automated workflow. Ask our team to configure your custom integrations today.</p>
+            <a href="#" class="btn btn-primary open-modal">Talk to Our Integration Experts</a>
           </div>
         </div>
       </div>
@@ -173,6 +180,14 @@ const integrations = [
     font-weight: 800;
     font-size: 1.1rem;
     border: 2px solid transparent;
+    overflow: hidden;
+  }
+
+  .int-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
   }
 
   .category-tag {

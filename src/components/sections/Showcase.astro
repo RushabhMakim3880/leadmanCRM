@@ -1,19 +1,28 @@
 ---
 const showcases = [
   {
-    title: "Manage Leads with Ease",
-    desc: "A clean, card-based interface to track every inquiry through its lifecycle.",
-    img: "/images/ManageLeads.png"
-  },
-  {
     title: "Deep Sales Insights",
-    desc: "Visualize your revenue and team performance with real-time analytics.",
-    img: "/images/Sales-Insights.png"
+    desc: "Visualize your revenue and team performance with real-time analytics. High-density interface with real-time data synchronization.",
+    img: "/images/Sales-Insights.png",
+    features: ["Customizable Dashboards", "Revenue Forecasting", "Trend Analysis"]
   },
   {
-    title: "Product Performance",
-    desc: "Identify your best-selling items and optimize your inventory.",
-    img: "/images/product-Insights.png"
+    title: "Intelligent Sales Automation",
+    desc: "Automatically route inquiries, set multi-stage reminders, and never let a prospect go cold.",
+    img: "/images/ManageLeads.png",
+    features: ["Auto Assignment", "Multi-stage Reminders", "Smart Routing"]
+  },
+  {
+    title: "Performance Tracking",
+    desc: "Monitor lead conversion rates, team activity, and ROI per lead source.",
+    img: "/images/product-Insights.png",
+    features: ["Conversion Rates", "Team Activity Logs", "ROI per Source"]
+  },
+  {
+    title: "Secure & Reliable",
+    desc: "100% data encryption and role-based access to keep your business information safe.",
+    img: "/images/Dashboard.png",
+    features: ["Data Encryption", "Role-based Access", "Cloud Security"]
   }
 ];
 ---
@@ -34,9 +43,9 @@ const showcases = [
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
             <ul class="check-list">
-              <li>High-Density Interface</li>
-              <li>Real-time Data Sync</li>
-              <li>Mobile-Ready Design</li>
+              {item.features.map(feat => (
+                <li>{feat}</li>
+              ))}
             </ul>
           </div>
           <div class="showcase-image-box">

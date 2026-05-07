@@ -1,0 +1,185 @@
+Do following updates after chiragbhai confirmation.
+
+1. Instead of Stop Losin Leads.Start Closing deals.
+
+Use following.
+“Close 30% More Leads with India’s Simplest WhatsApp-Integrated CRM”
+
+Sub-heading:
+Track every lead, automate follow-ups, and manage your "Entire sales process from one simple Dashboard" — built for Indian SMEs.
+
+2. Highlight following paramters in first page
+
+“Why Leadman CRM?”
+No lead loss (Auto follow-ups)
+Faster response (WhatsApp)
+Zero confusion (Single dashboard)
+Built for Indian businesses
+
+3. The Growth Pipeline
+From the first inquiry to a happy customer — structured, tracked, and automated.
+
+Suggestion:- 
+The Growth Pipeline
+Journey From Lead to a happy customer — structured, tracked, and automated flow.
+
+Update icons for more attractive look.
+
+4. 02
+Deep Sales Insights
+Visualize your revenue and team performance with real-time analytics.
+
+*High-Density Interface
+*Real-time Data Sync
+*Mobile-Ready Design
+
+Change Sub 3 Lines in upcoming all points. as it is currently same in all. Need seperate and as per features , you are highlighing.
+
+5. If possible, 1,2,3,4,5 Parameters should be like this...
+
+
+6. Above this (The Workflow
+The Growth Pipeline), add following 
+
+2 Sides illustration.
+Left Side Challanges
+Right side Solution 
+
+Left Side
+“Still Managing Leads on Excel or WhatsApp?”
+Leads getting missed  
+No follow-up tracking  
+Sales team not accountable  
+No clear sales pipeline  
+
+Right Side
+Leadman CRM Solves This
+Auto lead tracking  
+Follow-up reminders  
+Full sales visibility  
+WhatsApp integration  
+
+And make some proper illustartor.
+
+7. Make following lines more Highlighted
+Trusted by Growth-Minded Businesses
+
+8. Change this "with over 20 businesses"
+to 
+with many businesses
+
+
+9. Make bullets or icon in following
+Enterprise-Grade Security (Fully Encrypted)
+Onboarding & Implementation Support
+Single Window Operations
+
+10. Put BOOK Demo button permentatnly on screen on right side down corner
+
+
+https://leadmancrm.netlify.app/about/
+
+11. Heading:
+👉 “Built to Solve Real Sales Problems for SMEs”
+
+Subtext:
+Same as Current
+
+12. Our Heritage
+aani andar ... A Decade of ... Ni jagya e foolowing use karvu
+
+“Why We Built Leadman CRM”
+https://www.youtube.com/watch?v=etdQBuR7b5w
+aa video na script content no use kari ne existing content replace karvu.
+
+13. 12+ Yeasrs valu em ne em j rakhvu.
+
+14. Replace Mission as follows
+To Empower Indian SMEs to simplify sales managementand help them convert more leads without complexity.
+
+15. In Join the growth secion, 
+
+transforming sales for 250+ businesses across India.
+to 
+transforming sales for SMEs across India.
+
+16. Start Your Journery ni jagya e 
+Book Demo Lakhvu
+
+17. Remove this entire section
+Ending the Era of Spreadsheet Chaos
+
+18. After mission section , add following
+“What Makes Us Different”
+Built for Indian business workflows
+Focused on simplicity, not complexity
+Fast implementation (no long setup)
+WhatsApp-first approach
+
+Add video testimonial after this section
+
+
+https://leadmancrm.netlify.app/features/
+19. Heading:
+“Everything You Need (Have nu blue color ma )To Capture, Track & Close Leads”
+
+Subtext:
+From lead capture to conversion — Leadman CRM gives you complete control over your sales process in one simple system.
+
+20. Lead Management ma following add/Update karvu
+Smart Lead Assignment
+Sorce ROI Tracking report section ma nakhvu, ahithi remve karvu
+
+21. Quotation builder to Smart Quotation Builder
+
+22.Reports analysis ma thi 
+Org Hierarchy remove kari ne lead management section ma nakhvu
+Add this Sales Analytical reports
+Add Call Log analysis
+Remove team collobration
+
+23. Advance integration ma
+E-Mail integration add karvu
+
+
+https://leadmancrm.netlify.app/integrations/
+23. put real logo of whatsapp indiamart and other all
+add othe all which are currently integrationg , ask chandani madam fo this
+
+24. Built for Developers too
+Our open architecture means you can build anything on top of LeadMan. Access documentation and API keys in your dashboard.
+
+Remove above part, and put another suitatble content as per page.
+add cta button also
+
+
+https://leadmancrm.netlify.app/pricing/
+Increase Plan Name font size
+
+Put Subtext below Plan Name as follows
+Starter Plan
+Best for small teams starting with CRM
+
+Dominator Plan
+Perfect for growing sales teams
+
+AcceleratorPlan
+For businesses scaling fast
+
+
+Starter plan ma niche 
+Onboarding Support add karvu
+and e highlighted rakhvu.
+
+
+
+Monthly / Annualy nu botton mukvu.
+Annaly Select kare to discount diplay thay jay
+
+
+***
+In all CTA Button, Put Remarks box
+and message:- Write Short message for Team LeadMan
+
+***
+Get in touch ma mobile number and mail id no color visible thay e rite rakhvo

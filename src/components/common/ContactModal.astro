@@ -47,6 +47,10 @@
               <label>Phone Number</label>
               <input type="tel" placeholder="e.g. +91 98765 43210" required />
             </div>
+            <div class="form-group">
+              <label>Remarks</label>
+              <textarea placeholder="Write Short message for Team LeadMan" rows="3"></textarea>
+            </div>
             <button type="submit" class="btn-submit">Request Demo</button>
             <p class="form-note">No credit card required. Onboarding assistance included.</p>
           </form>
@@ -200,16 +204,23 @@
     margin-bottom: 8px;
   }
 
-  .form-group input {
+  .form-group input,
+  .form-group textarea {
     width: 100%;
     padding: 14px 16px;
     border: 2px solid #e2e8f0;
     border-radius: 12px;
     font-size: 1rem;
     transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
   }
 
-  .form-group input:focus {
+  .form-group input:focus,
+  .form-group textarea:focus {
     border-color: #0066cc;
     outline: none;
     box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);

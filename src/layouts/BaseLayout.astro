@@ -28,5 +28,50 @@ const { title, description = "LeadMan is the smart CRM designed for Indian SMEs.
 	<body>
 		<slot />
     <ContactModal />
+
+		<!-- Floating Book Demo Button -->
+		<button class="floating-book-demo open-modal">
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="book-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+			<span>Book Demo</span>
+		</button>
+
+		<style>
+			.floating-book-demo {
+				position: fixed;
+				bottom: 30px;
+				right: 30px;
+				background: #0066cc;
+				color: white;
+				border: none;
+				border-radius: 50px;
+				padding: 12px 24px;
+				font-size: 1rem;
+				font-weight: 600;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				cursor: pointer;
+				box-shadow: 0 10px 25px rgba(0, 102, 204, 0.4);
+				z-index: 1000;
+				transition: all 0.3s ease;
+			}
+			.floating-book-demo:hover {
+				transform: translateY(-3px) scale(1.05);
+				background: #0052a3;
+				box-shadow: 0 15px 30px rgba(0, 102, 204, 0.5);
+			}
+			.floating-book-demo .book-icon {
+				width: 18px;
+				height: 18px;
+			}
+			@media (max-width: 768px) {
+				.floating-book-demo {
+					bottom: 20px;
+					right: 20px;
+					padding: 10px 20px;
+					font-size: 0.9rem;
+				}
+			}
+		</style>
 	</body>
 </html>
