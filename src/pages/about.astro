@@ -10,7 +10,7 @@ import Footer from '../components/common/Footer.astro';
   <main>
     <section class="about-hero">
       <div class="container">
-        <h1>Built to Solve Real Sales <br/><span>Problems for SMEs</span></h1>
+        <h1>Built to Solve Real Sales <br/><span>Challenges for SMEs</span></h1>
         <p class="lead">We didn't build LeadMan in a lab. We built it in the real world, solving real sales challenges for Indian SMEs.</p>
       </div>
     </section>
@@ -28,7 +28,7 @@ import Footer from '../components/common/Footer.astro';
               With Leadman, you’re not just managing leads—you’re turning them into opportunities. You’re not just tracking sales—you’re boosting them. And you’re not just gathering data—you’re making smarter, data-driven decisions. Leadman adapts to your business, helping you track every lead, automate follow-ups, and get deep insights into your sales, all in one place.
             </p>
             <p>
-              Leadman CRM is specially designed for sales productivity and growth. It’s your partner in growth, the tool that makes your business run smoother, your team more productive, and your sales more effective. Leadman isn’t just software; it’s the backbone of your business’s success.
+              Leadman CRM is specially designed for sales productivity and growth. It’s your partner in growth, the CRM Solution that makes your business run smoother, your team more productive, and your sales more effective. Leadman isn’t just software; it’s the backbone of your business’s success.
             </p>
             <p>
               Whether you’re a small business just starting out or an established company looking to streamline your sales pipeline, Leadman CRM is here to help you unlock your full potential. Start with Leadman CRM today—let’s grow your business, one lead at a time.
@@ -102,11 +102,14 @@ import Footer from '../components/common/Footer.astro';
           </div>
         </div>
 
-        <div class="video-testimonial-placeholder">
-          <div class="play-button">
-            <svg viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-          </div>
-          <p>Hear from our successful partners</p>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/LZHN76O7sJ4" 
+            title="Ganesh Machine Tools LeadMan CRM Testimonial" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
@@ -344,75 +347,30 @@ import Footer from '../components/common/Footer.astro';
     line-height: 1.5;
   }
 
-  .video-testimonial-placeholder {
+  .video-container {
     max-width: 800px;
-    margin: 0 auto;
-    height: 450px;
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-    border-radius: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 40px auto 0 auto;
     position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background: #000;
   }
 
-  .video-testimonial-placeholder::before {
-    content: "";
+  .video-container iframe {
     position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80') center/cover;
-    opacity: 0.3;
-    mix-blend-mode: overlay;
-  }
-
-  .play-button {
-    width: 80px;
-    height: 80px;
-    background: #0066cc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.5);
-    animation: pulse 2s infinite;
-  }
-
-  .play-button:hover {
-    transform: scale(1.1);
-  }
-
-  .play-button svg {
-    width: 32px;
-    height: 32px;
-    margin-left: 6px;
-  }
-
-  .video-testimonial-placeholder p {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 700;
-    z-index: 2;
-    margin-top: 24px;
-  }
-
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(0, 102, 204, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(0, 102, 204, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(0, 102, 204, 0); }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 
   @media (max-width: 900px) {
     .diff-grid {
       grid-template-columns: repeat(2, 1fr);
-    }
-    .video-testimonial-placeholder {
-      height: 300px;
     }
   }
 
