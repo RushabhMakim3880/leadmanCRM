@@ -137,14 +137,32 @@
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    .footer {
+      padding: 60px 0 30px;
+    }
     .footer-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 20px;
+      margin-bottom: 40px;
+    }
+    .footer-brand, .footer-contact {
+      grid-column: 1 / -1;
+    }
+    .footer-links h4, .footer-contact h4 {
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      gap: 16px;
     }
     .footer-bottom {
       flex-direction: column;
       gap: 20px;
       text-align: center;
+      padding-top: 24px;
+    }
+    .footer-brand p {
+      max-width: 100%;
     }
   }
 </style>

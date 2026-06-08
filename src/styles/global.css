@@ -124,5 +124,24 @@ label {
 }
 
 @media (max-width: 768px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .container {
+    padding: 0 16px;
+  }
+  
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .grid {
+    gap: 24px;
+  }
+
+  .grid-2, .grid-3 { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .btn {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+  }
 }

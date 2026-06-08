@@ -174,4 +174,16 @@ const faqs = [
       padding: 40px 20px;
     }
   }
+
+  @media print {
+    :global(header), :global(nav), :global(footer) {
+      display: none !important;
+    }
+    .faq-section, .demo-cta {
+      display: none !important;
+    }
+    main {
+      padding-top: 0 !important;
+    }
+  }
 </style>

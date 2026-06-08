@@ -184,9 +184,46 @@ const steps = [
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
+    .pipeline-container {
+      margin-top: 40px;
+    }
     .pipeline-steps {
       grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .step-card {
+      display: flex;
+      align-items: flex-start;
+      text-align: left;
+      gap: 16px;
+    }
+    .step-header {
+      margin-bottom: 0;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .step-icon-box {
+      width: 48px;
+      height: 48px;
+      padding: 10px;
+      border-radius: 12px;
+    }
+    .step-number {
+      width: 24px;
+      height: 24px;
+      font-size: 0.7rem;
+    }
+    .step-body {
+      padding-top: 4px;
+    }
+    .step-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .step-body p {
+      padding: 0;
+      font-size: 0.9rem;
     }
   }
 </style>

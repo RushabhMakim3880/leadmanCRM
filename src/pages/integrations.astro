@@ -231,9 +231,69 @@ const integrations = [
   }
 
   @media (max-width: 768px) {
-    .dev-banner {
-      padding: 40px;
+    .integrations-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
     }
+
+    .integration-card {
+      padding: 32px 0;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid #e2e8f0;
+      background: transparent;
+      box-shadow: none;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 4px 16px;
+      align-items: center;
+    }
+
+    .integration-card:last-child {
+      border-bottom: none;
+    }
+
+    .integration-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .card-top {
+      display: contents;
+    }
+
+    .int-icon {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 48px;
+      height: 48px;
+    }
+
+    .category-tag {
+      grid-column: 3;
+      grid-row: 1;
+      align-self: center;
+      font-size: 0.65rem;
+      padding: 4px 8px;
+    }
+
+    .integration-card h3 {
+      grid-column: 2;
+      grid-row: 1;
+      margin-bottom: 0;
+      font-size: 1.25rem;
+    }
+
+    .integration-card p {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      margin-top: 12px;
+    }
+
+    .dev-banner {
+      padding: 40px 20px;
+    }
+    
     .dev-content h2 {
       font-size: 2rem;
     }

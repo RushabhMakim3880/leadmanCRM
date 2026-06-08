@@ -94,12 +94,22 @@ const clientLogos = [
   }
 
   @media (max-width: 768px) {
+    .clients-section {
+      padding: 40px 0;
+    }
+    .section-tag {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
     .logo-item {
-      width: 180px;
-      padding: 0 20px;
+      width: 140px;
+      padding: 0 10px;
+    }
+    .client-img {
+      max-width: 120px;
     }
     @keyframes scroll {
-      100% { transform: translateX(calc(-180px * 19)); }
+      100% { transform: translateX(calc(-140px * 19)); }
     }
   }
 </style>

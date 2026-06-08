@@ -21,6 +21,7 @@ const plans = [
     ],
     cta: "Start Basic",
     recommended: false,
+    color: "#10b981" // green
   },
   {
     name: "Dominator",
@@ -42,6 +43,7 @@ const plans = [
     ],
     cta: "Go Dominator",
     recommended: true,
+    color: "#f59e0b" // yellow/orange
   },
   {
     name: "Accelerator",
@@ -63,6 +65,7 @@ const plans = [
     ],
     cta: "Scale Now",
     recommended: false,
+    color: "#0ea5e9" // blue
   },
 ];
 ---
@@ -75,13 +78,13 @@ const plans = [
       <p>Choose the perfect fit for your sales team. No hidden charges.</p>
     </div>
 
-    <div class="billing-toggle-wrapper text-center">
-      <span class="billing-label">Monthly</span>
-      <label class="switch">
-        <input type="checkbox" id="billingToggle" checked>
-        <span class="slider round"></span>
-      </label>
-      <span class="billing-label">Annually <span class="discount-badge">Save 20%</span></span>
+    <div class="pill-toggle-wrapper text-center">
+      <div class="pill-toggle">
+        <div class="pill-bg" id="pillBg"></div>
+        <button class="pill-btn" id="btnMonthly">Monthly</button>
+        <button class="pill-btn active" id="btnAnnually">Annually</button>
+      </div>
+      <div class="discount-badge">Save 20% on Annual</div>
     </div>
 
     <div class="pricing-grid">
@@ -89,34 +92,51 @@ const plans = [
         <div class={`pricing-card ${plan.recommended ? 'recommended' : ''}`}>
           {plan.recommended && <div class="popular-tag">Most Popular</div>}
           
-          <div class="card-header">
-            <h3>{plan.name}</h3>
-            <p class="plan-subtext">{plan.subtext}</p>
-            <div class="price-box">
-              <span class="currency">₹</span>
-              <span class="amount" data-monthly={plan.price} data-annual={plan.annualPrice}>{plan.annualPrice}</span>
-              <span class="period">/user/mo</span>
+          <div class="card-summary" onclick="this.parentElement.classList.toggle('expanded')">
+            <div class="summary-left">
+              <div class="radio-icon" style={`border-color: ${plan.color}`}>
+                <div class="radio-inner" style={`background-color: ${plan.color}`}></div>
+              </div>
+              <div class="summary-titles">
+                <h3>{plan.name}</h3>
+                <p class="plan-subtext">{plan.subtext}</p>
+              </div>
             </div>
-            <p class="user-limit">Min. {plan.users} Users</p>
+            
+            <div class="summary-right">
+              <div class="price-box">
+                <span class="currency">₹</span>
+                <span class="amount" data-monthly={plan.price} data-annual={plan.annualPrice}>{plan.annualPrice}</span>
+                <span class="period">/mo</span>
+              </div>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
           </div>
 
-          <div class="card-features">
-            <ul>
-              {plan.features.map((feature) => (
-                <li class={feature === 'Onboarding Support' ? 'highlighted-feature' : ''}>
-                  <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div class="card-details">
+            <div class="card-details-inner">
+              <p class="user-limit">Min. {plan.users} Users</p>
+              <div class="card-features">
+                <ul>
+                  {plan.features.map((feature) => (
+                    <li class={feature === 'Onboarding Support' ? 'highlighted-feature' : ''}>
+                      <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          <div class="card-footer">
-            <a href="#" class={`btn ${plan.recommended ? 'btn-primary' : 'btn-outline'} open-modal`}>
-              {plan.cta}
-            </a>
+              <div class="card-footer">
+                <a href="#" class={`btn ${plan.recommended ? 'btn-primary' : 'btn-outline'} open-modal`}>
+                  {plan.cta}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       ))}
@@ -129,22 +149,41 @@ const plans = [
           <table class="topup-table">
             <tr>
               <td>Storage</td>
-              <td class="text-right"><strong>₹160 / 5GB</strong></td>
+              <td class="text-right">
+                <strong>₹160 / 5GB</strong>
+                <span class="sub-label">Price per month</span>
+              </td>
             </tr>
             <tr>
               <td>Data Points</td>
-              <td class="text-right"><strong>₹250 / 25K Records</strong></td>
+              <td class="text-right">
+                <strong>₹250 / 25K Records</strong>
+                <span class="sub-label">Price per month</span>
+              </td>
             </tr>
             <tr>
               <td>Whatsapp Messages</td>
               <td class="text-right">
                 <strong>₹250 / 100K</strong>
-                <span class="sub-label">Total In/Out Messages</span>
+                <span class="sub-label">Price per month (Total In/Out)</span>
               </td>
             </tr>
             <tr>
               <td>Whatsapp Integration</td>
-              <td class="text-right"><strong>₹1000 / Month</strong></td>
+              <td class="text-right">
+                <strong>₹1000 / Account</strong>
+                <span class="sub-label">Price per month</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Per Additional Feature
+                <span class="sub-label" style="text-align: left; margin-top: 4px;">From higher plan (if not in current)</span>
+              </td>
+              <td class="text-right">
+                <strong>₹50 / User</strong>
+                <span class="sub-label">Price per month</span>
+              </td>
             </tr>
           </table>
         </div>
@@ -166,39 +205,51 @@ const plans = [
             </tr>
           </table>
           <div class="note-box">
-            * Integration costs are per account, not per user.
+            <div style="margin-bottom: 8px;">* Integration costs are per account, not per user.</div>
+            <div>* <span id="billingDefaultText">Billed annually by default. </span>18% GST applicable.</div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="pricing-footer text-center">
-      <p>* All prices are per month. Billed annually by default. 18% GST applicable.</p>
     </div>
   </div>
 </section>
 
 <script>
-  const toggle = document.getElementById('billingToggle');
-  if (toggle) {
-    toggle.addEventListener('change', (e) => {
+  const btnMonthly = document.getElementById('btnMonthly');
+  const btnAnnually = document.getElementById('btnAnnually');
+  const pillBg = document.getElementById('pillBg');
+  const billingDefaultText = document.getElementById('billingDefaultText');
+
+  function updatePricing(isAnnual: boolean) {
+    document.querySelectorAll('.amount').forEach(el => {
       // @ts-ignore
-      const isAnnual = e.target.checked;
-      document.querySelectorAll('.amount').forEach(el => {
-        // @ts-ignore
-        el.innerText = isAnnual ? el.dataset.annual : el.dataset.monthly;
-      });
+      el.innerText = isAnnual ? el.dataset.annual : el.dataset.monthly;
     });
+    
+    if (isAnnual) {
+      btnAnnually?.classList.add('active');
+      btnMonthly?.classList.remove('active');
+      if(pillBg) pillBg.style.transform = 'translateX(100%)';
+      if(billingDefaultText) billingDefaultText.style.display = 'inline';
+    } else {
+      btnMonthly?.classList.add('active');
+      btnAnnually?.classList.remove('active');
+      if(pillBg) pillBg.style.transform = 'translateX(0)';
+      if(billingDefaultText) billingDefaultText.style.display = 'none';
+    }
   }
+
+  btnMonthly?.addEventListener('click', () => updatePricing(false));
+  btnAnnually?.addEventListener('click', () => updatePricing(true));
 </script>
 
 <style>
   .pricing-section {
-    background: #ffffff;
+    background: #f8fbff;
   }
 
   .section-header {
-    margin-bottom: 64px;
+    margin-bottom: 40px;
   }
 
   .section-tag {
@@ -211,6 +262,62 @@ const plans = [
     margin-bottom: 16px;
   }
 
+  /* Pill Toggle Styles */
+  .pill-toggle-wrapper {
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pill-toggle {
+    position: relative;
+    display: flex;
+    background: #ffffff;
+    border-radius: 100px;
+    padding: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    width: 280px;
+  }
+
+  .pill-bg {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: calc(50% - 6px);
+    height: calc(100% - 12px);
+    background: #0066cc;
+    border-radius: 100px;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* default annual */
+  }
+
+  .pill-btn {
+    position: relative;
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .pill-btn.active {
+    color: #ffffff;
+  }
+
+  .discount-badge {
+    color: #10b981;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  /* Desktop Grid */
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -221,11 +328,11 @@ const plans = [
     background: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 24px;
-    padding: 48px;
     display: flex;
     flex-direction: column;
     position: relative;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   }
 
   .pricing-card:hover {
@@ -235,15 +342,15 @@ const plans = [
 
   .pricing-card.recommended {
     border: 2px solid #0066cc;
-    background: #f8fbff;
     transform: scale(1.05);
     z-index: 10;
   }
 
   .popular-tag {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
     background: #0066cc;
     color: #ffffff;
     padding: 6px 16px;
@@ -251,14 +358,29 @@ const plans = [
     font-size: 0.75rem;
     font-weight: 800;
     text-transform: uppercase;
+    z-index: 2;
   }
 
-  .card-header {
+  .card-summary {
+    padding: 40px 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-bottom: 32px;
+    cursor: default;
   }
 
-  .card-header h3 {
+  .summary-left, .summary-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .radio-icon, .chevron {
+    display: none; /* Hide on desktop */
+  }
+
+  .card-summary h3 {
     font-size: 2rem;
     font-weight: 900;
     margin-bottom: 8px;
@@ -277,7 +399,7 @@ const plans = [
     align-items: baseline;
     justify-content: center;
     gap: 4px;
-    margin: 16px 0 8px;
+    margin-bottom: 8px;
   }
 
   .currency {
@@ -297,10 +419,25 @@ const plans = [
     color: #6b7280;
   }
 
+  .card-details {
+    padding: 0 40px 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-details-inner {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   .user-limit {
     font-size: 0.9rem;
     color: #0066cc;
     font-weight: 800;
+    text-align: center;
+    margin-bottom: 32px;
   }
 
   .card-features {
@@ -346,18 +483,14 @@ const plans = [
     padding: 18px;
   }
 
-  .pricing-footer {
-    margin-top: 48px;
-    color: #6b7280;
-    font-size: 0.85rem;
-  }
-
+  /* Topups */
   .topup-container {
     margin-top: 80px;
-    background: #f8fbff;
+    background: #ffffff;
     padding: 60px;
     border-radius: 32px;
     border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   }
 
   .topup-grid {
@@ -409,110 +542,255 @@ const plans = [
   .note-box {
     margin-top: 32px;
     padding: 16px;
-    background: #ffffff;
+    background: #f8fbff;
     border-radius: 12px;
     font-size: 0.85rem;
     color: #64748b;
-    border: 1px solid #e2e8f0;
+    border-left: 4px solid #0066cc;
   }
 
-  /* Toggle Switch Styles */
-  .billing-toggle-wrapper {
-    margin-bottom: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
+  .pricing-footer {
+    width: 100%;
   }
 
-  .billing-label {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #111827;
-    position: relative;
+  .footer-note {
+    max-width: 600px;
+    margin: 48px auto 0;
   }
 
-  .discount-badge {
-    position: absolute;
-    top: -24px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #10b981;
-    color: white;
-    font-size: 0.7rem;
-    padding: 4px 8px;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #0066cc;
-    transition: .4s;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-  }
-
-  input:checked + .slider {
-    background-color: #0066cc;
-  }
-
-  input:not(:checked) + .slider {
-    background-color: #94a3b8;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-
-  .slider.round {
-    border-radius: 34px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
+  /* Mobile Accordion Overrides */
   @media (max-width: 992px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-top: 20px; /* Space for the absolute tag */
+    }
+    
+    .pricing-card.recommended {
+      transform: scale(1);
+    }
+    
+    .card-summary {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px;
+      cursor: pointer;
+      text-align: left;
+      min-height: 110px; /* Ensure uniform height for all cards */
+    }
+
+    .summary-left {
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .radio-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid;
+      flex-shrink: 0;
+    }
+    
+    .radio-inner {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .pricing-card.expanded .radio-inner {
+      opacity: 1;
+    }
+
+    .card-summary h3 {
+      font-size: 1.25rem;
+      margin-bottom: 2px;
+    }
+
+    .plan-subtext {
+      font-size: 0.85rem;
+      margin-bottom: 0;
+      height: auto;
+    }
+
+    .summary-right {
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      border-left: 1px solid #e2e8f0;
+      padding-left: 16px;
+    }
+
+    .price-box {
+      margin-bottom: 0;
+    }
+
+    .amount {
+      font-size: 1.75rem;
+    }
+    
+    .period {
+      display: none;
+    }
+
+    .chevron {
+      display: block;
+      width: 20px;
+      height: 20px;
+      color: #94a3b8;
+      transition: transform 0.3s;
+    }
+
+    .card-details {
+      display: grid;
+      grid-template-rows: 0fr;
+      padding: 0 24px;
+      transition: grid-template-rows 0.3s ease-out, padding 0.3s;
+      overflow: hidden;
+    }
+    
+    .card-details-inner {
+      min-height: 0;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .pricing-card.expanded .card-details {
+      grid-template-rows: 1fr;
+      padding: 0 24px 32px;
+    }
+    
+    .pricing-card.expanded .card-details-inner {
+      opacity: 1;
+      padding-top: 24px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .pricing-card.expanded .chevron {
+      transform: rotate(90deg);
+    }
+    
+    .user-limit {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
     .topup-grid {
       grid-template-columns: 1fr;
       gap: 40px;
     }
     .topup-container {
-      padding: 30px 20px;
+      padding: 40px 24px;
+      margin-top: 48px;
     }
   }
 
-  @media (max-width: 768px) {
-    .pricing-card.recommended {
-      transform: scale(1);
+  @media (max-width: 480px) {
+    .summary-right {
+      gap: 8px;
+      padding-left: 8px;
+    }
+    .card-summary {
+      padding: 20px 16px;
+    }
+    .card-summary h3 {
+      font-size: 1.1rem;
+    }
+    .amount {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media print {
+    @page {
+      size: A4 landscape;
+      margin: 1cm;
+    }
+    .pricing-section {
+      background: white;
+      padding: 0 !important;
+      transform: scale(0.85);
+      transform-origin: top center;
+    }
+    .section-header h2, .section-header p {
+      color: #111827 !important;
+    }
+    .pricing-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 20px !important;
+      max-width: 100% !important;
+    }
+    .pill-toggle-wrapper, .chevron, .radio-icon, .btn {
+      display: none !important;
+    }
+    .pricing-card {
+      break-inside: avoid;
+      box-shadow: none !important;
+      border: 1px solid #e5e7eb !important;
+      padding: 24px !important;
+      transform: none !important;
+      border-radius: 16px !important;
+    }
+    .card-summary {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      padding: 0 !important;
+      min-height: auto !important;
+    }
+    .summary-left, .summary-right {
+      flex-direction: column !important;
+      align-items: center !important;
+      border: none !important;
+      padding: 0 !important;
+      gap: 0 !important;
+    }
+    .price-box {
+      margin-bottom: 16px !important;
+    }
+    .card-details {
+      display: block !important;
+      grid-template-rows: none !important;
+      padding: 0 !important;
+    }
+    .card-details-inner {
+      opacity: 1 !important;
+      padding-top: 16px !important;
+      border-top: 1px solid #e2e8f0 !important;
+    }
+    .user-limit {
+      text-align: center !important;
+    }
+    .popular-tag {
+      position: absolute !important;
+      top: -12px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      margin: 0 !important;
+    }
+    .topup-container {
+      margin-top: 40px !important;
+      padding: 24px !important;
+      box-shadow: none !important;
+      border: 1px solid #e5e7eb !important;
+    }
+    .topup-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 40px !important;
+    }
+    .topup-card {
+      break-inside: avoid;
     }
   }
 </style>

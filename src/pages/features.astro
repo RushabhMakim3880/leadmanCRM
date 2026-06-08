@@ -236,14 +236,52 @@ const modules = [
   @media (max-width: 768px) {
     .module-grid {
       grid-template-columns: 1fr;
+      gap: 0;
     }
     
+    .module-card {
+      padding: 32px 0;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid #e2e8f0;
+      background: transparent;
+      box-shadow: none;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 16px;
+      align-items: center;
+    }
+
+    .module-card:last-child {
+      border-bottom: none;
+    }
+
+    .module-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .module-icon svg {
+      margin-bottom: 0;
+    }
+
+    .module-card h3 {
+      margin-bottom: 0;
+      font-size: 1.35rem;
+    }
+
+    .module-card p {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+    }
+
     .cta-card {
       padding: 40px 20px;
     }
 
     .module-features {
       grid-template-columns: 1fr;
+      grid-column: 1 / -1;
     }
   }
 </style>

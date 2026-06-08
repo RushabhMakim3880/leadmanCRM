@@ -143,13 +143,44 @@ const stats = [
     flex-shrink: 0;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     .about-grid {
       grid-template-columns: 1fr;
-      gap: 64px;
+      gap: 40px;
     }
     .about-content {
       order: -1;
+    }
+    .stats-grid {
+      gap: 16px;
+    }
+    .stat-card {
+      padding: 16px 0;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-color);
+      border-radius: 0;
+    }
+    .stat-card:hover {
+      transform: none;
+      box-shadow: none;
+      background: transparent;
+      border-color: var(--border-color);
+    }
+    .stat-value {
+      font-size: 2rem;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+    }
+    .benefit-list {
+      margin-bottom: 32px;
+    }
+    .benefit-list li {
+      font-size: 0.95rem;
+    }
+    .about-content h2 {
+      font-size: 2rem;
     }
   }
 </style>

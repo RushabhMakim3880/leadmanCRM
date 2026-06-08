@@ -172,10 +172,26 @@ const iconMap: Record<string, string> = {
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .why-grid {
       grid-template-columns: 1fr;
-      gap: 32px;
+      gap: 0;
+    }
+    .why-item {
+      padding: 24px 0;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid #e2e8f0;
+      background: transparent;
+      box-shadow: none;
+    }
+    .why-item:last-child {
+      border-bottom: none;
+    }
+    .why-item:hover {
+      transform: none;
+      background: transparent;
+      box-shadow: none;
     }
   }
 </style>

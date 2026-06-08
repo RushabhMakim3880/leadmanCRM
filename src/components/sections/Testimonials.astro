@@ -176,10 +176,21 @@ const testimonials = [
 
   @media (max-width: 768px) {
     .testimonial-item {
-      width: 320px;
+      width: 280px;
+    }
+    .testimonial-card {
+      padding: 24px;
+      border-radius: 16px;
+    }
+    .quote {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .quote-icon {
+      margin-bottom: 12px;
     }
     @keyframes scroll {
-      100% { transform: translateX(calc(-350px * 6)); }
+      100% { transform: translateX(calc(-310px * 6)); } /* 280px + 30px gap */
     }
   }
 </style>

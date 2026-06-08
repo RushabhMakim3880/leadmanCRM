@@ -17,12 +17,48 @@
       <a href="#" class="btn-demo open-modal">Book a Demo</a>
     </div>
 
-    <button class="mobile-toggle" aria-label="Toggle Menu">
-      <span></span>
-      <span></span>
+    <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </button>
   </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/" class="mobile-link">Home</a>
+    <a href="/about" class="mobile-link">About Us</a>
+    <a href="/features" class="mobile-link">Features</a>
+    <a href="/integrations" class="mobile-link">Integrations</a>
+    <a href="/pricing" class="mobile-link">Pricing</a>
+    <a href="#" class="btn-demo open-modal mobile-book-btn">Book a Demo</a>
+  </div>
 </nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('mobileMenu');
+    
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      });
+
+      // Close menu when clicking a link
+      const links = menu.querySelectorAll('.mobile-link, .btn-demo');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          btn.classList.remove('active');
+          menu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  });
+</script>
 
 <style>
   .navbar {
@@ -87,11 +123,82 @@
 
   .mobile-toggle {
     display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1010;
+  }
+
+  .mobile-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #1f2937;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 100px 24px 40px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-link {
+    text-decoration: none;
+    color: #1f2937;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 16px 0;
+    border-bottom: 1px solid #f3f4f6;
+    text-align: center;
+  }
+
+  .mobile-book-btn {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 16px;
+    width: 100%;
+  }
+
+  /* Hamburger to X Animation */
+  .mobile-toggle.active .bar:nth-child(1) {
+    transform: translateY(10.5px) rotate(45deg);
+  }
+  .mobile-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.active .bar:nth-child(3) {
+    transform: translateY(-10.5px) rotate(-45deg);
   }
 
   @media (max-width: 1024px) {
     .nav-links {
       display: none;
+    }
+    .mobile-toggle {
+      display: flex;
     }
   }
 </style>
