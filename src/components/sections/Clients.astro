@@ -4,28 +4,34 @@ const clientLogos = [
   "FMC.png", "GenesisSolar.png", "Gmt-1.png", "HPTLOGO.png", 
   "Jayshakti.png", "Jse.png", "NovaValves-300x90.png", "RaftarLogo.png", 
   "SKlogo.png", "SVCNC-150x150.png", "Sahara.png", "ShreeMomaiLogo.png", 
-  "ShrutiKitchanware.png", "SweetBite-150x150.png", "vimox-logo-300x74.png"
+  "ShrutiKitchanware.png", "SweetBite-150x150.png", "vimox-logo-300x74.png",
+  "bell-agrotech.png", "dkmachineries.png", "equinoxsolar.png", "jks-engineering.png",
+  "madhurammotors.png", "shanpetro.png", "shivshaktiautomation.png", "avsarIndustries.png",
+  "growmore.png", "harihar.png", "imagecreation.png", "marvelagro.png",
+  "microcapmarketplace.png", "naagmani.png", "neoncables.png", "nexeva.png",
+  "omkar.png", "princezatka.png", "raviraj.png", "shivtelecom.png",
+  "svcnc.png", "westernsurgical.png", "zolita.png"
 ];
 ---
 
 <section class="clients-section">
   <div class="container">
     <p class="section-tag">Trusted by 250+ Business Owners Across India</p>
-    
-    <div class="logo-track">
-      <div class="logo-list">
-        {clientLogos.map((logo) => (
-          <div class="logo-item">
-            <img src={`/images/clients/${logo}`} alt="Client Logo" class="client-img" />
-          </div>
-        ))}
-        {/* Duplicate for infinite loop */}
-        {clientLogos.map((logo) => (
-          <div class="logo-item">
-            <img src={`/images/clients/${logo}`} alt="Client Logo" class="client-img" />
-          </div>
-        ))}
-      </div>
+  </div>
+  
+  <div class="logo-track" id="client-logo-track">
+    <div class="logo-list">
+      {clientLogos.map((logo) => (
+        <div class="logo-item">
+          <img src={`/images/clients/${logo}`} alt="Client Logo" class="client-img" />
+        </div>
+      ))}
+      {/* Duplicate for infinite loop */}
+      {clientLogos.map((logo) => (
+        <div class="logo-item">
+          <img src={`/images/clients/${logo}`} alt="Client Logo" class="client-img" />
+        </div>
+      ))}
     </div>
   </div>
 </section>
@@ -53,13 +59,22 @@ const clientLogos = [
   .logo-track {
     display: flex;
     width: 100%;
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    overflow-x: auto;
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .logo-track::-webkit-scrollbar {
+    display: none;
   }
 
   .logo-list {
     display: flex;
     align-items: center;
-    animation: scroll 60s linear infinite;
+    width: max-content;
   }
 
   .logo-item {
@@ -76,22 +91,14 @@ const clientLogos = [
     max-height: 85px;
     width: auto;
     height: auto;
-    filter: grayscale(100%) opacity(0.5);
     transition: all 0.3s ease;
   }
 
   .logo-item:hover .client-img {
-    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
   }
 
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-280px * 19)); }
-  }
 
-  .logo-track:hover .logo-list {
-    animation-play-state: paused;
-  }
 
   @media (max-width: 768px) {
     .clients-section {
@@ -108,8 +115,40 @@ const clientLogos = [
     .client-img {
       max-width: 120px;
     }
-    @keyframes scroll {
-      100% { transform: translateX(calc(-140px * 19)); }
-    }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('client-logo-track');
+    if (!track) return;
+    
+    let isPaused = false;
+    let autoScrollSpeed = 1.5; // Change this value to adjust speed
+    
+    // Pause auto-scroll when user interacts
+    track.addEventListener('mouseenter', () => isPaused = true);
+    track.addEventListener('mouseleave', () => isPaused = false);
+    
+    track.addEventListener('touchstart', () => isPaused = true);
+    track.addEventListener('touchend', () => {
+      // Resume shortly after swiping
+      setTimeout(() => isPaused = false, 1500); 
+    });
+
+    function autoScroll() {
+      if (!isPaused) {
+        track.scrollLeft += autoScrollSpeed;
+        
+        // When we reach the exact middle (end of first list), jump back to 0 seamlessly
+        if (track.scrollLeft >= track.scrollWidth / 2) {
+          track.scrollLeft = 0;
+        }
+      }
+      requestAnimationFrame(autoScroll);
+    }
+    
+    // Start loop
+    requestAnimationFrame(autoScroll);
+  });
+</script>
